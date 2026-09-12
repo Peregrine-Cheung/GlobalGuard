@@ -86,4 +86,6 @@ npm start
 - `GlobalGuard_复赛最终提交清单.md`
 - `GlobalGuard_source/` 源代码副本与 `SHA256SUMS.txt`
 
-代码仓库地址须在提交前确认评委可访问；本地体验地址不能从公网直接打开。
+公开代码仓库：`https://github.com/Peregrine-Cheung/GlobalGuard`
+
+该仓库仅发布经过秘密与个人信息排查的应用源码、运行说明和公开提交文档；2026-09-12 已用未登录访问验证 `main` 分支可读取。本地体验地址不能从公网直接打开。
