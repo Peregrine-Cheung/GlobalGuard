@@ -1,0 +1,134 @@
+{
+  "datasetId": "us-visual-facts-schema-conformance-v4",
+  "datasetType": "synthetic-schema-conformance",
+  "notice": "仅验证美国视觉响应的结构、OCR一致性、文字区域绑定和拒绝路径，不代表模型准确率、平台判定或人工金标准。",
+  "cases": [
+    {
+      "id": "accept-no-text-clean-envelope",
+      "expected": "accept",
+      "response": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "visualObservation": "白色背景中的单个收纳盒",
+        "textRegions": [],
+        "findings": []
+      }
+    },
+    {
+      "id": "accept-readable-overlay-with-bound-region",
+      "expected": "accept",
+      "response": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE",
+        "visualObservation": "图片顶部有红色促销横幅",
+        "textRegions": [
+          { "id": "text-1", "text": "SALE", "origin": "overlay", "readability": "readable", "bbox": [0.1, 0.05, 0.3, 0.1] }
+        ],
+        "findings": [
+          { "kind": "promotional_overlay", "description": "顶部红色横幅写有SALE", "textOrigin": "overlay", "regionId": "text-1" }
+        ]
+      }
+    },
+    {
+      "id": "reject-top-level-severity",
+      "expected": "reject",
+      "errorPattern": "INVALID_US_VISUAL_TOP_LEVEL",
+      "response": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "visualObservation": "白色背景中的收纳盒",
+        "textRegions": [],
+        "findings": [],
+        "severity": "ready"
+      }
+    },
+    {
+      "id": "reject-no-text-with-label-observation",
+      "expected": "reject",
+      "errorPattern": "OCR_STATUS_OBSERVATION_CONFLICT",
+      "response": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "visualObservation": "篮子正面可见品牌标签",
+        "textRegions": [],
+        "findings": []
+      }
+    },
+    {
+      "id": "reject-dangling-region-reference",
+      "expected": "reject",
+      "errorPattern": "UNKNOWN_TEXT_REGION_REFERENCE",
+      "response": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE",
+        "visualObservation": "顶部有促销文字",
+        "textRegions": [
+          { "id": "text-1", "text": "SALE", "origin": "overlay", "readability": "readable", "bbox": [0.1, 0.05, 0.3, 0.1] }
+        ],
+        "findings": [
+          { "kind": "promotional_overlay", "description": "顶部有SALE", "textOrigin": "overlay", "regionId": "text-2" }
+        ]
+      }
+    },
+    {
+      "id": "reject-product-brand-as-watermark",
+      "expected": "reject",
+      "errorPattern": "TEXT_ORIGIN_CONFLICT",
+      "response": {
+        "ocrStatus": "readable_text",
+        "ocrText": "BRAND",
+        "visualObservation": "商品本体有品牌压印",
+        "textRegions": [
+          { "id": "text-1", "text": "BRAND", "origin": "product", "readability": "readable", "bbox": [0.3, 0.4, 0.2, 0.08] }
+        ],
+        "findings": [
+          { "kind": "watermark", "description": "商品表面有BRAND压印", "textOrigin": "product", "regionId": "text-1" }
+        ]
+      }
+    },
+    {
+      "id": "reject-ocr-text-not-equal-regions",
+      "expected": "reject",
+      "errorPattern": "OCR_STATUS_REGION_CONFLICT",
+      "response": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE LIMITED",
+        "visualObservation": "顶部有两行促销文字",
+        "textRegions": [
+          { "id": "text-1", "text": "SALE", "origin": "overlay", "readability": "readable", "bbox": [0.1, 0.05, 0.3, 0.08] },
+          { "id": "text-2", "text": "LIMITED", "origin": "overlay", "readability": "readable", "bbox": [0.1, 0.14, 0.3, 0.08] }
+        ],
+        "findings": []
+      }
+    },
+    {
+      "id": "reject-duplicate-region-box",
+      "expected": "reject",
+      "errorPattern": "DUPLICATE_TEXT_REGION_BOX",
+      "response": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE\nSALE",
+        "visualObservation": "顶部有促销文字",
+        "textRegions": [
+          { "id": "text-1", "text": "SALE", "origin": "overlay", "readability": "readable", "bbox": [0.1, 0.05, 0.3, 0.1] },
+          { "id": "text-2", "text": "SALE", "origin": "overlay", "readability": "readable", "bbox": [0.1, 0.05, 0.3, 0.1] }
+        ],
+        "findings": []
+      }
+    },
+    {
+      "id": "reject-finding-missing-region-id-key",
+      "expected": "reject",
+      "errorPattern": "INVALID_VISUAL_FACT",
+      "response": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "visualObservation": "白色背景中有两个收纳盒",
+        "textRegions": [],
+        "findings": [
+          { "kind": "multiple_products", "description": "画面内有两个收纳盒", "textOrigin": "not_applicable" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "datasetId": "eu-offer-facts-schema-conformance-v2",
+  "datasetType": "synthetic-schema-conformance",
+  "notice": "仅验证字段回显、缺失值保护和档案逐字引用，不代表模型准确率、GPSR完整判定或人工金标准。",
+  "cases": [
+    {
+      "id": "accept-partial-fields-with-exact-quotes",
+      "expected": "accept",
+      "input": {
+        "offerFields": {
+          "manufacturerName": "河北示例制造有限公司", "manufacturerCountry": "CN", "manufacturerPostalAddress": "河北省石家庄市示例路1号", "manufacturerEmail": "maker@example.invalid", "productId": "BOX-01", "safetyInfo": "远离明火", "responsiblePersonName": "", "responsiblePersonPostalAddress": "", "responsiblePersonEmail": ""
+        },
+        "offerEvidence": {
+          "sourceRef": "DOSSIER-2026-001",
+          "excerpt": "制造商：河北示例制造有限公司；国家：CN；地址：河北省石家庄市示例路1号；邮箱：maker@example.invalid；型号：BOX-01；警示：远离明火。"
+        }
+      },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": "河北示例制造有限公司", "sourceQuote": "制造商：河北示例制造有限公司" },
+          { "field": "manufacturerCountry", "providedValue": "CN", "sourceQuote": "国家：CN" },
+          { "field": "manufacturerPostalAddress", "providedValue": "河北省石家庄市示例路1号", "sourceQuote": "地址：河北省石家庄市示例路1号" },
+          { "field": "manufacturerEmail", "providedValue": "maker@example.invalid", "sourceQuote": "邮箱：maker@example.invalid" },
+          { "field": "productId", "providedValue": "BOX-01", "sourceQuote": "型号：BOX-01" },
+          { "field": "safetyInfo", "providedValue": "远离明火", "sourceQuote": "警示：远离明火" },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "accept-provided-but-uncited",
+      "expected": "accept",
+      "input": {
+        "offerFields": {
+          "manufacturerName": "Example Maker", "manufacturerCountry": "DE", "manufacturerPostalAddress": "Berlin", "manufacturerEmail": "maker@example.invalid", "productId": "BOX-02", "safetyInfo": "Keep dry", "responsiblePersonName": "", "responsiblePersonPostalAddress": "", "responsiblePersonEmail": ""
+        },
+        "offerEvidence": { "sourceRef": "", "excerpt": "" }
+      },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": "Example Maker", "sourceQuote": null },
+          { "field": "manufacturerCountry", "providedValue": "DE", "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": "Berlin", "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": "maker@example.invalid", "sourceQuote": null },
+          { "field": "productId", "providedValue": "BOX-02", "sourceQuote": null },
+          { "field": "safetyInfo", "providedValue": "Keep dry", "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-generated-responsible-person",
+      "expected": "reject",
+      "errorPattern": "EU_MISSING_FIELD_WAS_GENERATED",
+      "input": {
+        "offerFields": { "manufacturerName": "Example Maker", "manufacturerCountry": "CN" },
+        "offerEvidence": { "sourceRef": "D-1", "excerpt": "制造商 Example Maker" }
+      },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": "Example Maker", "sourceQuote": "Example Maker" },
+          { "field": "manufacturerCountry", "providedValue": "CN", "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": null, "sourceQuote": null },
+          { "field": "productId", "providedValue": null, "sourceQuote": null },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": "Invented EU RP", "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-changed-email",
+      "expected": "reject",
+      "errorPattern": "EU_FIELD_VALUE_MISMATCH",
+      "input": {
+        "offerFields": { "manufacturerEmail": "maker@example.invalid" },
+        "offerEvidence": { "sourceRef": "", "excerpt": "" }
+      },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerCountry", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": "other@example.invalid", "sourceQuote": null },
+          { "field": "productId", "providedValue": null, "sourceQuote": null },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-invented-source-quote",
+      "expected": "reject",
+      "errorPattern": "EU_SOURCE_QUOTE_NOT_VERBATIM",
+      "input": {
+        "offerFields": { "productId": "BOX-03" },
+        "offerEvidence": { "sourceRef": "D-3", "excerpt": "产品型号 BOX-03" }
+      },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerCountry", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": null, "sourceQuote": null },
+          { "field": "productId", "providedValue": "BOX-03", "sourceQuote": "另一个档案中的 BOX-03" },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-model-decision-field",
+      "expected": "reject",
+      "errorPattern": "INVALID_EU_FIELD_FACT",
+      "input": { "offerFields": {}, "offerEvidence": { "sourceRef": "", "excerpt": "" } },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": null, "sourceQuote": null, "severity": "blocker" },
+          { "field": "manufacturerCountry", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": null, "sourceQuote": null },
+          { "field": "productId", "providedValue": null, "sourceQuote": null },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-field-order-drift",
+      "expected": "reject",
+      "errorPattern": "EU_FIELD_ORDER_MISMATCH",
+      "input": { "offerFields": {}, "offerEvidence": { "sourceRef": "", "excerpt": "" } },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerCountry", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerName", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": null, "sourceQuote": null },
+          { "field": "productId", "providedValue": null, "sourceQuote": null },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-quote-without-source-reference",
+      "expected": "reject",
+      "errorPattern": "EU_QUOTE_WITHOUT_SOURCE_REF",
+      "input": { "offerFields": { "productId": "BOX-04" }, "offerEvidence": { "sourceRef": "", "excerpt": "型号 BOX-04" } },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerCountry", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": null, "sourceQuote": null },
+          { "field": "productId", "providedValue": "BOX-04", "sourceQuote": "型号 BOX-04" },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    },
+    {
+      "id": "reject-source-quote-over-240-chars",
+      "expected": "reject",
+      "errorPattern": "EU_SOURCE_QUOTE_NOT_VERBATIM",
+      "input": {
+        "offerFields": { "productId": "BOX-05" },
+        "offerEvidence": { "sourceRef": "D-5", "excerpt": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBOX-05" }
+      },
+      "response": {
+        "fieldFacts": [
+          { "field": "manufacturerName", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerCountry", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "manufacturerEmail", "providedValue": null, "sourceQuote": null },
+          { "field": "productId", "providedValue": "BOX-05", "sourceQuote": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBOX-05" },
+          { "field": "safetyInfo", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonName", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonPostalAddress", "providedValue": null, "sourceQuote": null },
+          { "field": "responsiblePersonEmail", "providedValue": null, "sourceQuote": null }
+        ]
+      }
+    }
+  ]
+}

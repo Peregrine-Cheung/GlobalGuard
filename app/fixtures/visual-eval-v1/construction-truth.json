@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "globalguard-visual-fixtures-v1",
+  "createdOn": "2026-09-08",
+  "coordinateSystem": "normalized_xywh_top_left",
+  "notice": "确定性合成夹具的构造真值，不是人工金标准、模型准确率或真实商家数据。",
+  "cases": [
+    {
+      "id": "fixture-01",
+      "challenge": "no-text",
+      "filename": "fixture-01.svg",
+      "assetPath": "/visual-fixtures/fixture-01.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "ece2745cc5f8ebf389eda4431da844464b124961a8a9fc81e45ce33a8f0b46f2",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "fixture-02",
+      "challenge": "tiny-readable",
+      "filename": "fixture-02.svg",
+      "assetPath": "/visual-fixtures/fixture-02.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "5b7fcfd15c48a2ce4a5329c901d950bfbdb0dc79984a78c67065de77061e6dba",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SKU BX-204",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SKU BX-204",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [
+              0.4056,
+              0.5875,
+              0.1889,
+              0.0347
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "fixture-03",
+      "challenge": "tiny-unreadable",
+      "filename": "fixture-03.svg",
+      "assetPath": "/visual-fixtures/fixture-03.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "bd0dc43f20b4331b770a3dcf8594e1ee1aba6348010f08f592a8fb9f35c54276",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "unreadable_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": null,
+            "origin": "product",
+            "readability": "unreadable",
+            "bbox": [
+              0.4167,
+              0.5931,
+              0.1667,
+              0.0194
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "fixture-04",
+      "challenge": "product-label",
+      "filename": "fixture-04.svg",
+      "assetPath": "/visual-fixtures/fixture-04.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "a0f13d452bcc1089e5783e73c5552631a4de32da545a2c45d99857e844a4af84",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "FLEXIBOX",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "FLEXIBOX",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [
+              0.3361,
+              0.4722,
+              0.3278,
+              0.0917
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "fixture-05",
+      "challenge": "scene-price-tag",
+      "filename": "fixture-05.svg",
+      "assetPath": "/visual-fixtures/fixture-05.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "72cbf5d6b07f092e628376d351ef6788cd9188a0fcb12697bdbc631e0cbff65a",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "$19.99\nSTORE TAG",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "$19.99",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [
+              0.7569,
+              0.6806,
+              0.1806,
+              0.0806
+            ]
+          },
+          {
+            "id": "text-2",
+            "text": "STORE TAG",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [
+              0.7806,
+              0.7389,
+              0.1194,
+              0.0278
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "price_text",
+            "textOrigin": "scene",
+            "regionId": "text-1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-06",
+      "challenge": "promotional-overlay",
+      "filename": "fixture-06.svg",
+      "assetPath": "/visual-fixtures/fixture-06.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "e11fb93466c91b8f2fa7a2daa795f61ce245b57e3a8f9f7942def798ed8a3a3a",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE 50% OFF",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SALE 50% OFF",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [
+              0.0806,
+              0.0625,
+              0.8389,
+              0.1319
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "promotional_overlay",
+            "textOrigin": "overlay",
+            "regionId": "text-1"
+          }
+        ]
+      }
+    }
+  ]
+}

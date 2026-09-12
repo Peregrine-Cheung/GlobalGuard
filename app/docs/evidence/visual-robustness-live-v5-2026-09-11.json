@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "evidenceKind": "sanitized-ten-request-single-human-agreement-summary",
+  "executedAt": "2026-09-11T04:55:09.799Z",
+  "datasetId": "globalguard-visual-robustness-v1",
+  "provider": "aliyun-token-plan",
+  "model": "qwen3.7-plus",
+  "observationPolicy": "us-visual-facts-v5",
+  "executionControls": {
+    "maxProviderRequests": 10,
+    "requestsAttempted": 10,
+    "supplierResponses": 10,
+    "retryDisabled": true,
+    "fallbackDisabled": true,
+    "tokenBudget": 25000,
+    "totalTokens": 18662
+  },
+  "evaluation": {
+    "localStructureContractsPassed": 9,
+    "strictSingleHumanAgreement": 3,
+    "strictSingleHumanAgreementRate": 0.3,
+    "modelAccuracyMeasured": false,
+    "legalCorrectnessMeasured": false,
+    "realMerchantPerformanceMeasured": false,
+    "referenceStatus": "completed-single-human-review-not-consensus-gold"
+  },
+  "cases": [
+    { "id": "robustness-01", "status": "passed", "requestId": "chatcmpl-bde97259-9b10-45e2-bf84-bb471abbf2f5", "tokens": 1885, "strictAgreement": false, "mismatch": ["neutral_staging_card_misclassified_as_decorative_border"] },
+    { "id": "robustness-02", "status": "passed", "requestId": "chatcmpl-fd497fc9-bfd9-4bdd-aa48-f1fcb004e0cc", "tokens": 1717, "strictAgreement": true, "mismatch": [] },
+    { "id": "robustness-03", "status": "passed", "requestId": "chatcmpl-b6bc0d2e-fb01-431f-95d2-be6a1dc51313", "tokens": 1965, "strictAgreement": true, "mismatch": [] },
+    { "id": "robustness-04", "status": "passed", "requestId": "chatcmpl-063ec37f-2285-45b1-b0b0-118dddbfde02", "tokens": 1879, "strictAgreement": false, "mismatch": ["neutral_staging_card_misclassified_as_decorative_border", "local_low_clarity_fact_missing"] },
+    { "id": "robustness-05", "status": "passed", "requestId": "chatcmpl-0a065d36-da3e-4cdf-a414-47920ef17fa0", "tokens": 1951, "strictAgreement": false, "mismatch": ["spatially_separated_overlay_words_merged", "neutral_staging_card_misclassified_as_decorative_border"] },
+    { "id": "robustness-06", "status": "passed", "requestId": "chatcmpl-3b2958d9-e51a-4876-b5e6-f83993aa92ca", "tokens": 1818, "strictAgreement": true, "mismatch": [] },
+    { "id": "robustness-07", "status": "passed", "requestId": "chatcmpl-0dfb6eca-451e-4f52-9b72-b9931b13bb55", "tokens": 1891, "strictAgreement": false, "mismatch": ["neutral_staging_card_misclassified_as_decorative_border", "visible_product_occlusion_fact_missing"] },
+    { "id": "robustness-08", "status": "passed", "requestId": "chatcmpl-44c59091-c797-48c2-b11b-4ee59be2026c", "tokens": 1815, "strictAgreement": false, "mismatch": ["detached_vertical_tag_origin_product_instead_of_scene"] },
+    { "id": "robustness-09", "status": "passed", "requestId": "chatcmpl-97c3613e-dd24-4013-9671-5c9672efabe9", "tokens": 1954, "strictAgreement": false, "mismatch": ["neutral_staging_card_misclassified_as_decorative_border"] },
+    { "id": "robustness-10", "status": "rejected_by_local_contract", "requestId": "chatcmpl-9ab1b7f7-e248-4096-827b-f1d7082596de", "tokens": 1787, "strictAgreement": false, "validationIssue": "OCR_STATUS_OBSERVATION_CONFLICT", "mismatch": ["no_text_seen_observation_used_forbidden_text_semantics"] }
+  ],
+  "crossCaseDiagnosis": [
+    { "pattern": "neutral_staging_card_misclassified_as_decorative_border", "affectedCases": 5, "action": "strengthen_prompt_exclusion" },
+    { "pattern": "spatial_text_segmentation", "affectedCases": 1, "action": "define_space_continuity_rule" },
+    { "pattern": "local_clarity_occlusion_and_tag_origin", "affectedCases": 3, "action": "add_explicit_observation_rules" },
+    { "pattern": "no_text_seen_contract_conflict", "affectedCases": 1, "action": "retain_hard_rejection_and_strengthen_output_wording" }
+  ],
+  "sourceResult": {
+    "path": "tmp/visual-robustness-eval/result-1789102509800.json",
+    "sha256": "468B84DB5888EE4D29D97F4130A10A1FC12CA89D1804AB9F8943F0E5CF89A1A6"
+  },
+  "notice": "本报告只记录确定性合成挑战集上的结构契约和一次单人人工复核一致性，不构成模型准确率、真实商家图片表现、法律正确率或平台审核通过率。"
+}

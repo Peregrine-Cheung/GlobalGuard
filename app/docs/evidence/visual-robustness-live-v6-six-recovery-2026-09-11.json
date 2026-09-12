@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "evidenceKind": "telemetry-only-recovery-after-post-call-report-assembly-failure",
+  "recordedAt": "2026-09-11T14:59:57.2336650+08:00",
+  "datasetId": "globalguard-visual-robustness-v1",
+  "provider": "aliyun-token-plan",
+  "model": "qwen3.7-plus",
+  "observationPolicy": "us-visual-facts-v6",
+  "executionControls": {
+    "authorizedRequests": 6,
+    "requestsAttempted": 6,
+    "supplierResponses": 6,
+    "localStructureContractsPassed": 6,
+    "retryDisabled": true,
+    "fallbackDisabled": true,
+    "tokenBudget": 15000,
+    "totalTokens": 12369
+  },
+  "cases": [
+    { "id": "robustness-01", "requestId": "chatcmpl-f99ff13f-1603-450f-aef0-12de250af4f8", "tokens": 1999, "localStructureContractPassed": true },
+    { "id": "robustness-04", "requestId": "chatcmpl-cd90e9cb-437e-47d1-bcdb-9cf91ee04bfe", "tokens": 2075, "localStructureContractPassed": true },
+    { "id": "robustness-05", "requestId": "chatcmpl-ee5ce09f-40cc-43f6-9062-371dedee413c", "tokens": 2232, "localStructureContractPassed": true },
+    { "id": "robustness-07", "requestId": "chatcmpl-636fe03c-27ae-412f-8c8d-73dea85c5581", "tokens": 2109, "localStructureContractPassed": true },
+    { "id": "robustness-08", "requestId": "chatcmpl-79ee1e21-2ba9-40c3-ac99-d0f3d5f4ab45", "tokens": 1992, "localStructureContractPassed": true },
+    { "id": "robustness-10", "requestId": "chatcmpl-c99f2b7d-dd25-47b4-ab14-3d0cde9f8fd3", "tokens": 1962, "localStructureContractPassed": true }
+  ],
+  "agreementEvaluation": {
+    "completed": false,
+    "strictSingleHumanAgreement": null,
+    "reason": "The six validated predictions existed only in process memory. After all supplier calls completed, the report assembler passed a six-case subset into a validator that requires the complete ten-case human pack, so no prediction report was written before process exit.",
+    "repeatCallsUsedForRecovery": false
+  },
+  "remediation": {
+    "implemented": true,
+    "changes": [
+      "Validate the complete human annotation pack before selecting evaluation case IDs.",
+      "Persist an incremental local checkpoint after every provider response before aggregate evaluation."
+    ],
+    "realModelCallsDuringRemediation": 0
+  },
+  "notice": "This file proves six supplier responses, six local structure-contract passes and bounded token use from captured execution telemetry. It does not preserve the model predictions and therefore cannot claim v6 semantic improvement, strict human agreement, model accuracy, legal correctness or platform approval."
+}

@@ -1,0 +1,116 @@
+{
+  "datasetId": "cn-ad-facts-schema-conformance-v2",
+  "datasetType": "synthetic-schema-conformance",
+  "notice": "仅验证结构、逐字约束和拒绝路径，不代表模型准确率、真实广告违法判断或人工金标准。",
+  "cases": [
+    {
+      "id": "accept-title-copy-image",
+      "expected": "accept",
+      "input": {
+        "productTitle": "全网最佳折叠收纳箱",
+        "productCopy": "用户好评率 98%，据测试报告A，收纳效率提升 30%。"
+      },
+      "response": {
+        "imageTextStatus": "readable_text",
+        "imageText": "销量第一",
+        "claims": [
+          { "id": "claim-1", "verbatim": "全网最佳", "source": "product_title", "kind": "superlative_or_ranking", "numericTokens": [], "referenceTokens": [] },
+          { "id": "claim-2", "verbatim": "用户好评率 98%", "source": "product_copy", "kind": "numeric_or_statistical", "numericTokens": ["98%"], "referenceTokens": [] },
+          { "id": "claim-3", "verbatim": "据测试报告A", "source": "product_copy", "kind": "citation_or_reference", "numericTokens": [], "referenceTokens": ["测试报告A"] },
+          { "id": "claim-4", "verbatim": "销量第一", "source": "image_text", "kind": "superlative_or_ranking", "numericTokens": [], "referenceTokens": [] }
+        ]
+      }
+    },
+    {
+      "id": "accept-no-readable-image-text",
+      "expected": "accept",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "适合日常家居收纳。" },
+      "response": {
+        "imageTextStatus": "unreadable_text_seen",
+        "imageText": "NONE",
+        "claims": [
+          { "id": "claim-1", "verbatim": "适合日常家居收纳", "source": "product_copy", "kind": "general_product_statement", "numericTokens": [], "referenceTokens": [] }
+        ]
+      }
+    },
+    {
+      "id": "reject-paraphrase",
+      "expected": "reject",
+      "errorPattern": "CN_CLAIM_NOT_VERBATIM",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "收纳效率提升 30%。" },
+      "response": {
+        "imageTextStatus": "no_text_seen",
+        "imageText": "NONE",
+        "claims": [
+          { "id": "claim-1", "verbatim": "效率行业领先", "source": "product_copy", "kind": "performance_or_effect", "numericTokens": [], "referenceTokens": [] }
+        ]
+      }
+    },
+    {
+      "id": "reject-guessed-image-text",
+      "expected": "reject",
+      "errorPattern": "CN_IMAGE_TEXT_STATUS_CONFLICT",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "适合家居收纳。" },
+      "response": { "imageTextStatus": "unreadable_text_seen", "imageText": "销量第一", "claims": [] }
+    },
+    {
+      "id": "reject-invented-number",
+      "expected": "reject",
+      "errorPattern": "INVALID_CN_NUMERIC_TOKEN",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "用户好评率 98%。" },
+      "response": {
+        "imageTextStatus": "no_text_seen",
+        "imageText": "NONE",
+        "claims": [
+          { "id": "claim-1", "verbatim": "用户好评率 98%", "source": "product_copy", "kind": "numeric_or_statistical", "numericTokens": ["99%"], "referenceTokens": [] }
+        ]
+      }
+    },
+    {
+      "id": "reject-model-legal-decision",
+      "expected": "reject",
+      "errorPattern": "INVALID_CN_FACTS_TOP_LEVEL",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "适合家居收纳。" },
+      "response": { "imageTextStatus": "no_text_seen", "imageText": "NONE", "claims": [], "severity": "违法" }
+    },
+    {
+      "id": "reject-missing-numeric-token",
+      "expected": "reject",
+      "errorPattern": "CN_NUMERIC_TOKENS_INCOMPLETE",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "容量提升 30%，可承重 20kg。" },
+      "response": {
+        "imageTextStatus": "no_text_seen",
+        "imageText": "NONE",
+        "claims": [
+          { "id": "claim-1", "verbatim": "容量提升 30%，可承重 20kg", "source": "product_copy", "kind": "numeric_or_statistical", "numericTokens": ["30%"], "referenceTokens": [] }
+        ]
+      }
+    },
+    {
+      "id": "reject-numeric-kind-without-number",
+      "expected": "reject",
+      "errorPattern": "CN_NUMERIC_KIND_WITHOUT_NUMBER",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "容量显著提升。" },
+      "response": {
+        "imageTextStatus": "no_text_seen",
+        "imageText": "NONE",
+        "claims": [
+          { "id": "claim-1", "verbatim": "容量显著提升", "source": "product_copy", "kind": "numeric_or_statistical", "numericTokens": [], "referenceTokens": [] }
+        ]
+      }
+    },
+    {
+      "id": "reject-citation-without-reference-token",
+      "expected": "reject",
+      "errorPattern": "CN_REFERENCE_KIND_MISSING_TOKEN",
+      "input": { "productTitle": "折叠收纳箱", "productCopy": "据测试报告A，容量提升。" },
+      "response": {
+        "imageTextStatus": "no_text_seen",
+        "imageText": "NONE",
+        "claims": [
+          { "id": "claim-1", "verbatim": "据测试报告A", "source": "product_copy", "kind": "citation_or_reference", "numericTokens": [], "referenceTokens": [] }
+        ]
+      }
+    }
+  ]
+}

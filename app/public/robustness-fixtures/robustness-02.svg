@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="视觉鲁棒性评测 robustness-02" data-fixture-id="robustness-02">
+  <defs></defs>
+  <rect width="720" height="720" fill="#f4f0e8"/>
+  <rect x="82" y="156" width="556" height="416" rx="34" fill="#fff" stroke="#d4cdc1" stroke-width="4"/>
+  <ellipse cx="360" cy="539" rx="222" ry="31" fill="#aaa59d" opacity="0.33"/>
+  <path d="M190 274 L530 274 L491 502 Q360 540 229 502 Z" fill="#596f7a" stroke="#20313a" stroke-width="7"/><path d="M250 274 Q360 214 470 274" fill="none" stroke="#20313a" stroke-width="18" stroke-linecap="round"/><path d="M215 310 H505 M225 350 H495 M235 440 H485" stroke="#fff" stroke-opacity="0.25" stroke-width="6"/>
+  <g fill="#617079" opacity="0.27"><rect x="302" y="421" width="9" height="9"/><rect x="316" y="424" width="4" height="7"/><rect x="326" y="420" width="6" height="11"/><rect x="338" y="423" width="8" height="8"/><rect x="352" y="421" width="3" height="10"/><rect x="362" y="424" width="7" height="7"/><rect x="376" y="420" width="5" height="11"/><rect x="388" y="423" width="9" height="8"/><rect x="403" y="421" width="5" height="10"/><rect x="414" y="424" width="4" height="7"/></g>
+</svg>

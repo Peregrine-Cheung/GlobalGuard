@@ -1,0 +1,40 @@
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="34" y1="78" x2="390" y2="402" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFC"/>
+      <stop offset="1" stop-color="#E6EEF0"/>
+    </linearGradient>
+    <linearGradient id="box" x1="118" y1="175" x2="315" y2="349" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9C4A7"/>
+      <stop offset="1" stop-color="#A78965"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="114" y1="158" x2="326" y2="203" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1E4CE"/>
+      <stop offset="1" stop-color="#C6AA84"/>
+    </linearGradient>
+    <filter id="shadow" x="70" y="145" width="286" height="235" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#29383D" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="420" height="420" fill="url(#bg)"/>
+  <rect x="6" y="6" width="408" height="408" rx="3" stroke="#255CFF" stroke-width="12"/>
+  <rect x="12" y="12" width="396" height="70" fill="#FF5C35"/>
+  <path d="M24 64L76 12H133L81 64H24Z" fill="#FF8B6F" fill-opacity="0.55"/>
+  <text x="30" y="42" fill="white" font-family="Arial, sans-serif" font-size="23" font-weight="800" letter-spacing="1.5">BEST • FREE SHIPPING</text>
+  <text x="30" y="66" fill="#FFF3EF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2">LIMITED OFFER</text>
+  <ellipse cx="218" cy="352" rx="132" ry="25" fill="#77868B" fill-opacity="0.20"/>
+  <g filter="url(#shadow)">
+    <path d="M107 196L320 196L303 337C302 349 292 358 280 358H139C126 358 116 348 115 335L107 196Z" fill="url(#box)"/>
+    <path d="M107 196H320L296 164C292 158 285 155 278 155H146C138 155 131 159 127 165L107 196Z" fill="url(#lid)"/>
+    <path d="M134 191L149 170H276L292 191H134Z" fill="#FAF1E3" fill-opacity="0.72"/>
+    <rect x="135" y="211" width="158" height="112" rx="8" fill="#CBB08D"/>
+    <path d="M141 217H287V250C244 265 185 265 141 250V217Z" fill="#DCC8AA"/>
+    <rect x="190" y="277" width="49" height="15" rx="7.5" fill="#8B6E4E"/>
+    <path d="M135 322H293L302 339C298 350 290 358 278 358H141C129 358 120 349 117 338L135 322Z" fill="#9F7F5C" fill-opacity="0.6"/>
+    <path d="M131 202L117 335" stroke="#8F704E" stroke-width="3" stroke-opacity="0.45"/>
+    <path d="M296 203L302 335" stroke="#8F704E" stroke-width="3" stroke-opacity="0.45"/>
+  </g>
+  <circle cx="342" cy="122" r="28" fill="#12333B"/>
+  <path d="M330 123L339 132L355 112" stroke="#C8F169" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="304" y="161" fill="#12333B" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">FOLDABLE STORAGE</text>
+</svg>

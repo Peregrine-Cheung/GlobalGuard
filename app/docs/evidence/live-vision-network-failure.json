@@ -1,0 +1,110 @@
+{
+  "startedAt": "2026-09-04T11:04:26.640Z",
+  "fixtureType": "synthetic",
+  "applicationBackend": true,
+  "cases": [
+    {
+      "id": "original",
+      "result": {
+        "analysisId": "ccba3358-1257-470e-884e-72d78e539b9d",
+        "analyzedAt": "2026-09-04T11:04:26.791Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 94,
+          "status": "review",
+          "totalRisks": 2,
+          "blockerCount": 0,
+          "reviewCount": 1,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "a8f60d2c5252",
+            "ruleId": "GG-US-IMG-002",
+            "route": "US_GOOGLE",
+            "severity": "warning",
+            "category": "未来规则准备度",
+            "title": "图片未达到即将执行的 500×500px 要求",
+            "finding": "当前图片为 420×420px；这不是 2026 年 9 月的硬性驳回项。",
+            "whyItMatters": "Google 已公布从 2027-01-31 起执行新的最低尺寸要求。",
+            "action": "在不损失清晰度的前提下换用或制作至少 500×500px 的主图。",
+            "applicability": "准备度提示；预计 2027-01-31 起执行",
+            "requiresHumanReview": false,
+            "location": {
+              "type": "whole-image"
+            },
+            "evidence": [
+              {
+                "id": "google_image_size_transition",
+                "title": "Google Merchant Center：商品图片尺寸要求变更",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/12159030?hl=en-GB",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "deterministic"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [
+          {
+            "id": "fix-resize-720",
+            "type": "resize_canvas",
+            "label": "生成 720×720 画布草稿",
+            "description": "保持主体比例；扩大画布不等于提高原图清晰度，需检查输出质量。",
+            "automatic": true
+          }
+        ],
+        "audit": {
+          "productTitle": "可折叠家居收纳箱",
+          "category": "home-storage",
+          "image": {
+            "width": 420,
+            "height": 420,
+            "name": "original.png",
+            "mimeType": "image/png"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "143f4c4615f2000b35df8621e79de6035720034c697775f2ffc180cf84ac35dc",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "0d6e20e4c090f00e"
+        },
+        "ai": {
+          "status": "degraded",
+          "message": "赛事 Token Plan 调用失败，已保留确定性规则结果。",
+          "errorCode": "fetch failed",
+          "stages": []
+        }
+      }
+    }
+  ],
+  "overall": "failed",
+  "failure": "LIVE_CASE_FAILED_original",
+  "finishedAt": "2026-09-04T11:04:26.799Z"
+}

@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "globalguard-visual-robustness-v1",
+  "annotationStatus": "completed-single-human-review",
+  "annotator": "demo02",
+  "reviewedAt": "2026-09-11T04:48:39.089Z",
+  "cases": [
+    {
+      "id": "robustness-01",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "LOT A17",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "LOT A17",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [0.448, 0.5696, 0.1039, 0.0276]
+          }
+        ],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-02",
+      "humanLabel": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-03",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "$24.50\nCLEARANCE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "$24.50",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [0.7516, 0.6646, 0.1621, 0.0749]
+          },
+          {
+            "id": "text-2",
+            "text": "CLEARANCE",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [0.7831, 0.7203, 0.1201, 0.0466]
+          }
+        ],
+        "visualFacts": [
+          { "kind": "price_text", "textOrigin": "scene", "regionId": "text-1" }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-04",
+      "humanLabel": {
+        "ocrStatus": "unreadable_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": null,
+            "origin": "product",
+            "readability": "unreadable",
+            "bbox": [0.4035, 0.508, 0.1917, 0.0392]
+          }
+        ],
+        "visualFacts": [
+          { "kind": "low_clarity", "textOrigin": "not_applicable", "regionId": null }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-05",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE\n50%\nOFF",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SALE",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [0.1096, 0.0919, 0.2005, 0.062]
+          },
+          {
+            "id": "text-2",
+            "text": "50%",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [0.4185, 0.0919, 0.1643, 0.0627]
+          },
+          {
+            "id": "text-3",
+            "text": "OFF",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [0.7144, 0.0924, 0.153, 0.0615]
+          }
+        ],
+        "visualFacts": [
+          { "kind": "promotional_overlay", "textOrigin": "overlay", "regionId": "text-1" },
+          { "kind": "promotional_overlay", "textOrigin": "overlay", "regionId": "text-2" },
+          { "kind": "promotional_overlay", "textOrigin": "overlay", "regionId": "text-3" }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-06",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "ECO HOME",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "ECO HOME",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [0.389, 0.5022, 0.2236, 0.0395]
+          }
+        ],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-07",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "PREMIUM",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "PREMIUM",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [0.3838, 0.5048, 0.2335, 0.0411]
+          }
+        ],
+        "visualFacts": [
+          { "kind": "occluded_product", "textOrigin": "not_applicable", "regionId": null }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-08",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "HANDLE WITH CARE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "HANDLE WITH CARE",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [0.7862, 0.3771, 0.0308, 0.2854]
+          }
+        ],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-09",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SAMPLE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SAMPLE",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [0.2541, 0.3561, 0.4979, 0.282]
+          }
+        ],
+        "visualFacts": [
+          { "kind": "watermark", "textOrigin": "overlay", "regionId": "text-1" }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-10",
+      "humanLabel": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [],
+        "visualFacts": [
+          { "kind": "multiple_products", "textOrigin": "not_applicable", "regionId": null }
+        ],
+        "notes": ""
+      }
+    }
+  ],
+  "limitations": {
+    "singleAnnotator": true,
+    "interAnnotatorAgreementMeasured": false,
+    "modelAccuracyEstablished": false,
+    "legalCorrectnessEstablished": false
+  }
+}

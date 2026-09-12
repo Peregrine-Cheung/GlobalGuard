@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="视觉鲁棒性评测 robustness-08" data-fixture-id="robustness-08">
+  <defs></defs>
+  <rect width="720" height="720" fill="#f4f0e8"/>
+  <rect x="82" y="156" width="556" height="416" rx="34" fill="#fff" stroke="#d4cdc1" stroke-width="4"/>
+  <ellipse cx="360" cy="539" rx="222" ry="31" fill="#aaa59d" opacity="0.33"/>
+  <path d="M190 274 L530 274 L491 502 Q360 540 229 502 Z" fill="#3f6e9b" stroke="#20313a" stroke-width="7"/><path d="M250 274 Q360 214 470 274" fill="none" stroke="#20313a" stroke-width="18" stroke-linecap="round"/><path d="M215 310 H505 M225 350 H495 M235 440 H485" stroke="#fff" stroke-opacity="0.25" stroke-width="6"/>
+  <g transform="rotate(90 579 374)"><rect x="460" y="351" width="238" height="46" rx="5" fill="#faf5e7" stroke="#6b5e43" stroke-width="2"/><text x="579" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#38342b">HANDLE WITH CARE</text></g>
+</svg>

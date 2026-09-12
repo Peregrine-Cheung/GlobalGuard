@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "1.0",
+  "evaluationKind": "single-human-review-agreement",
+  "datasetId": "globalguard-visual-fixtures-v1",
+  "referenceStatus": "completed-single-human-review-not-consensus-gold",
+  "referenceFile": "fixtures/visual-eval-v1/human-annotations.single-review-2026-09-11.json",
+  "modelRun": {
+    "provider": "aliyun-token-plan",
+    "model": "qwen3.7-plus",
+    "observationPolicy": "us-visual-facts-v5",
+    "executedAt": "2026-09-10T11:43:12.303Z",
+    "totalTokens": 10917,
+    "rawLocalResultSha256": "c1a539fd19fd36c8291c42be5d779cfc0610451ccb82fdca45f90e673ffa2c2a"
+  },
+  "humanReviewAgreementMeasured": true,
+  "modelAccuracyMeasured": false,
+  "legalCorrectnessMeasured": false,
+  "realMerchantPerformanceMeasured": false,
+  "localizationThreshold": "ordered text region bbox IoU >= 0.50 or normalized center distance <= 0.04",
+  "cases": [
+    {
+      "id": "fixture-01",
+      "requestSucceeded": true,
+      "contractPassed": true,
+      "strictAgreement": true,
+      "checks": {
+        "ocrStatus": true,
+        "ocrText": true,
+        "regionCount": true,
+        "regionSemantics": true,
+        "regionLocalization": true,
+        "visualFactSet": true
+      },
+      "regionPairs": []
+    },
+    {
+      "id": "fixture-02",
+      "requestSucceeded": true,
+      "contractPassed": true,
+      "strictAgreement": true,
+      "checks": {
+        "ocrStatus": true,
+        "ocrText": true,
+        "regionCount": true,
+        "regionSemantics": true,
+        "regionLocalization": true,
+        "visualFactSet": true
+      },
+      "regionPairs": [
+        {
+          "index": 0,
+          "textMatch": true,
+          "originMatch": true,
+          "readabilityMatch": true,
+          "bboxIou": 0.2323,
+          "centerDistance": 0.0178,
+          "localizationMatch": true
+        }
+      ]
+    },
+    {
+      "id": "fixture-03",
+      "requestSucceeded": true,
+      "contractPassed": true,
+      "strictAgreement": false,
+      "checks": {
+        "ocrStatus": false,
+        "ocrText": true,
+        "regionCount": false,
+        "regionSemantics": false,
+        "regionLocalization": false,
+        "visualFactSet": false
+      },
+      "regionPairs": [
+        {
+          "index": 0,
+          "textMatch": false,
+          "originMatch": false,
+          "readabilityMatch": false,
+          "bboxIou": 0,
+          "centerDistance": null,
+          "localizationMatch": false
+        }
+      ]
+    },
+    {
+      "id": "fixture-04",
+      "requestSucceeded": true,
+      "contractPassed": true,
+      "strictAgreement": true,
+      "checks": {
+        "ocrStatus": true,
+        "ocrText": true,
+        "regionCount": true,
+        "regionSemantics": true,
+        "regionLocalization": true,
+        "visualFactSet": true
+      },
+      "regionPairs": [
+        {
+          "index": 0,
+          "textMatch": true,
+          "originMatch": true,
+          "readabilityMatch": true,
+          "bboxIou": 0.3321,
+          "centerDistance": 0.0056,
+          "localizationMatch": true
+        }
+      ]
+    },
+    {
+      "id": "fixture-05",
+      "requestSucceeded": true,
+      "contractPassed": true,
+      "strictAgreement": true,
+      "checks": {
+        "ocrStatus": true,
+        "ocrText": true,
+        "regionCount": true,
+        "regionSemantics": true,
+        "regionLocalization": true,
+        "visualFactSet": true
+      },
+      "regionPairs": [
+        {
+          "index": 0,
+          "textMatch": true,
+          "originMatch": true,
+          "readabilityMatch": true,
+          "bboxIou": 0.3688,
+          "centerDistance": 0.0275,
+          "localizationMatch": true
+        },
+        {
+          "index": 1,
+          "textMatch": true,
+          "originMatch": true,
+          "readabilityMatch": true,
+          "bboxIou": 0.5277,
+          "centerDistance": 0.0094,
+          "localizationMatch": true
+        }
+      ]
+    },
+    {
+      "id": "fixture-06",
+      "requestSucceeded": true,
+      "contractPassed": true,
+      "strictAgreement": true,
+      "checks": {
+        "ocrStatus": true,
+        "ocrText": true,
+        "regionCount": true,
+        "regionSemantics": true,
+        "regionLocalization": true,
+        "visualFactSet": true
+      },
+      "regionPairs": [
+        {
+          "index": 0,
+          "textMatch": true,
+          "originMatch": true,
+          "readabilityMatch": true,
+          "bboxIou": 0.2171,
+          "centerDistance": 0.0164,
+          "localizationMatch": true
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "cases": 6,
+    "requestSucceeded": 6,
+    "contractPassed": 6,
+    "strictAgreement": 5,
+    "strictSingleHumanAgreementRate": 0.8333
+  },
+  "knownMismatch": {
+    "caseId": "fixture-03",
+    "humanReview": "unreadable_text_seen with one unreadable product text region and low_clarity",
+    "modelPrediction": "no_text_seen with no text region",
+    "interpretation": "tiny unreadable character-like strokes were missed; keep OCR NONE semantically bounded to no reliably transcribed text"
+  },
+  "notice": "该比例仅表示模型输出与一次单人人工复核标签的一致性，不是多人金标准、模型准确率、法律正确率或平台通过率。"
+}

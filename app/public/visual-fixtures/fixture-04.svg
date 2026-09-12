@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="视觉评测fixture-04" data-fixture-id="fixture-04">
+  <rect width="720" height="720" fill="#f5f1e8"/>
+  <rect x="95" y="165" width="530" height="390" rx="34" fill="#ffffff" stroke="#d7d0c4" stroke-width="4"/>
+  <ellipse cx="360" cy="536" rx="215" ry="34" fill="#c7c2ba" opacity="0.42"/>
+  <path d="M195 270 L525 270 L490 500 Q360 540 230 500 Z" fill="#c66c2f" stroke="#20313a" stroke-width="7"/>
+  <path d="M215 305 H505 M225 350 H495 M235 395 H485 M245 440 H475" fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="7"/>
+  <path d="M250 270 Q360 210 470 270" fill="none" stroke="#20313a" stroke-width="18" stroke-linecap="round"/>
+  <rect x="242" y="340" width="236" height="66" rx="9" fill="#f4eadc" stroke="#9d5526" stroke-width="3"/><text x="360" y="383" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#7e421f">FLEXIBOX</text>
+</svg>

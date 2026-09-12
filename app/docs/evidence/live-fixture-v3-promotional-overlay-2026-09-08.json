@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "evidenceType": "single-deterministic-fixture-live-structure-check",
+  "recordedOn": "2026-09-08",
+  "fixture": {
+    "id": "fixture-06",
+    "sourceKind": "deterministic-synthetic-svg-rendered-to-png",
+    "pngSha256": "897B3F1A8093C3882C5ED80F4EC8BC2FDD3E3F3CD72C7E0D8A5A6A33DB4102C5",
+    "dimensions": {
+      "width": 720,
+      "height": 720
+    },
+    "expected": {
+      "ocrStatus": "readable_text",
+      "ocrText": "SALE 50% OFF",
+      "origin": "overlay",
+      "bbox": [0.0806, 0.0625, 0.8389, 0.1319]
+    }
+  },
+  "request": {
+    "model": "qwen3.7-plus",
+    "observationPolicy": "us-visual-facts-v3",
+    "requestId": "chatcmpl-37bba3a4-7756-4396-a7b3-e87e33e74f30",
+    "latencyMs": 5654,
+    "usage": {
+      "promptTokens": 1330,
+      "completionTokens": 278,
+      "totalTokens": 1608
+    }
+  },
+  "validatedResult": {
+    "aiStatus": "live",
+    "analysisStatus": "review",
+    "ocrStatus": "readable_text",
+    "ocrText": "SALE 50% OFF",
+    "textRegions": [
+      {
+        "id": "text-1",
+        "text": "SALE 50% OFF",
+        "origin": "overlay",
+        "readability": "readable",
+        "bbox": [0.08, 0.06, 0.84, 0.15]
+      }
+    ],
+    "mappedRisk": {
+      "ruleId": "GG-US-VISUAL-PROMOTIONAL-OVERLAY",
+      "evidenceRegionId": "text-1",
+      "location": {
+        "type": "region",
+        "x": 8,
+        "y": 6,
+        "width": 84,
+        "height": 15,
+        "regionId": "text-1",
+        "source": "model-text-region"
+      }
+    },
+    "audit": {
+      "fingerprintVersion": 5,
+      "inputFingerprint": "a46b6b223e566e12"
+    }
+  },
+  "singleCaseDiagnostic": {
+    "bboxIoU": 0.8782,
+    "absoluteCoordinateError": [0.0006, 0.0025, 0.0011, 0.0181]
+  },
+  "limitations": [
+    "This is one deterministic synthetic fixture, not a real merchant image.",
+    "The IoU is a single-case development diagnostic, not model accuracy.",
+    "The construction truth is not an independent human gold label.",
+    "The result does not prove platform approval or repair quality."
+  ]
+}

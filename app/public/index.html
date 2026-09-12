@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GlobalGuard 跨境图文合规智能体复赛演示版">
+  <title>GlobalGuard · 跨境发布前合规工作台</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="GlobalGuard 首页">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>GlobalGuard</span>
+    </a>
+    <div class="topbar-meta">
+      <a class="topbar-link" href="/validation.html">验证中心</a>
+      <span class="status-dot"><i></i>规则包 v1.0.0</span>
+      <span id="runtime-status" class="runtime-status">正在检查服务…</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CROSS-BORDER RELEASE GATE</p>
+        <h1>让跨境上新的风险，有据可查。</h1>
+        <p class="hero-description">同一商品，面向不同市场完成风险定位、官方依据解释、最小修复和素材复检。明确检测边界，保留人工确认。</p>
+      </div>
+      <div class="hero-proof" aria-label="核心工作流">
+        <span>Route</span><b>01</b>
+        <i></i>
+        <span>Detect</span><b>02</b>
+        <i></i>
+        <span>Explain</span><b>03</b>
+        <i></i>
+        <span>Fix</span><b>04</b>
+        <i></i>
+        <span>Recheck</span><b>05</b>
+      </div>
+    </section>
+
+    <section class="workspace-shell">
+      <div class="route-header">
+        <div>
+          <span class="section-kicker">01 / 发布环境</span>
+          <h2>先确定商品要去哪里</h2>
+        </div>
+        <div class="mode-control">
+          <label for="analysis-mode">分析模式</label>
+          <select id="analysis-mode">
+            <option value="local">本地可验证规则</option>
+            <option value="live">赛事 Token Plan</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="route-tabs" role="tablist" aria-label="发布环境">
+        <button class="route-tab active" role="tab" data-route="US_GOOGLE" aria-selected="true">
+          <span class="route-code">US</span>
+          <span><b>Google Merchant</b><small>修复与复检演示</small></span>
+          <em>主演示</em>
+        </button>
+        <button class="route-tab" role="tab" data-route="CN_ADS" aria-selected="false">
+          <span class="route-code">CN</span>
+          <span><b>中国电商广告</b><small>语境与证据判断</small></span>
+        </button>
+        <button class="route-tab" role="tab" data-route="EU_GPSR" aria-selected="false">
+          <span class="route-code">EU</span>
+          <span><b>GPSR 在线销售</b><small>页面义务检查</small></span>
+        </button>
+      </div>
+
+      <div class="route-context" id="route-context">
+        <span class="context-icon">i</span>
+        <p><b>当前检查：</b>Google 商品主图当前要求与 2027 尺寸变更准备度。未来规则会单独标识，不冒充当前驳回项。</p>
+      </div>
+
+      <div class="workspace-grid">
+        <section class="input-panel" aria-labelledby="input-heading">
+          <div class="panel-heading">
+            <div>
+              <span class="section-kicker">02 / 商品资料</span>
+              <h2 id="input-heading">上传并描述商品</h2>
+            </div>
+            <button id="load-sample" class="text-button" type="button">载入演示 SKU</button>
+          </div>
+
+          <details class="sample-picker">
+            <summary>没有商品图片？试用有来源的真实照片</summary>
+            <label for="licensed-sample">选择公开测试素材（非商家案例）</label>
+            <div class="sample-picker-controls">
+              <select id="licensed-sample" disabled><option value="">正在载入…</option></select>
+              <button id="load-licensed-sample" class="secondary-button" type="button" disabled>载入照片</button>
+            </div>
+            <a href="/samples.html" target="_blank" rel="noreferrer">查看全部照片、测试重点与来源 ↗</a>
+          </details>
+
+          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="上传商品主图">
+            <input id="image-input" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+            <div id="empty-upload" class="empty-upload">
+              <span class="upload-icon" aria-hidden="true">↥</span>
+              <strong>拖入商品主图</strong>
+              <small>PNG / JPG / WebP，建议小于 8 MB</small>
+              <button id="choose-image" type="button" class="secondary-button">选择文件</button>
+            </div>
+            <div id="image-preview-wrap" class="image-preview-wrap hidden">
+              <img id="image-preview" alt="待检测商品主图">
+              <div id="image-badges" class="image-badges"></div>
+              <div id="risk-overlay" class="risk-overlay" aria-hidden="true"></div>
+              <button id="replace-image" type="button" class="replace-image">更换图片</button>
+            </div>
+          </div>
+
+          <div id="sample-attribution" class="sample-attribution hidden" aria-live="polite"></div>
+          <button id="download-attribution" type="button" class="text-button hidden">下载素材署名与许可说明</button>
+
+          <div class="form-grid">
+            <label class="field full">
+              <span>商品标题</span>
+              <input id="product-title" type="text" maxlength="100" placeholder="例如：FlexiNest 可折叠家居收纳箱">
+            </label>
+            <label class="field full">
+              <span>商品文案</span>
+              <textarea id="product-copy" rows="4" maxlength="1200" placeholder="粘贴标题、卖点与图片中可见的营销文案"></textarea>
+            </label>
+            <label class="field full">
+              <span>图片可见文字 <em>可选，真实模型模式会自动 OCR</em></span>
+              <input id="overlay-text" type="text" maxlength="200" placeholder="例如：BEST · FREE SHIPPING">
+            </label>
+          </div>
+
+          <div id="cn-fields" class="conditional-fields hidden">
+            <label class="field full">
+              <span>数据或效果主张的证据链接/编号 <em>可选</em></span>
+              <input id="claim-evidence" type="text" maxlength="300" placeholder="原始检测报告、统计口径或内部档案编号">
+            </label>
+            <label class="check-field">
+              <input id="ai-label-declared" type="checkbox">
+              <span>已记录 AI 素材的显式/隐式标识和传播链路</span>
+            </label>
+          </div>
+
+          <div id="eu-fields" class="conditional-fields hidden">
+            <div class="conditional-heading">
+              <b>欧盟在线商品要约信息</b>
+              <span>系统不会自动编造企业主体资料</span>
+            </div>
+            <div class="form-grid compact">
+              <label class="field"><span>制造商名称</span><input id="manufacturer-name" type="text"></label>
+              <label class="field"><span>制造商国家代码</span><input id="manufacturer-country" type="text" maxlength="2" placeholder="CN"></label>
+              <label class="field full"><span>制造商邮政地址</span><input id="manufacturer-address" type="text"></label>
+              <label class="field"><span>制造商电子地址</span><input id="manufacturer-email" type="email"></label>
+              <label class="field"><span>产品型号/标识符</span><input id="product-id" type="text"></label>
+              <label class="field full"><span>适用的警告或安全信息</span><input id="safety-info" type="text" placeholder="若经评估不适用，请记录评估结论"></label>
+              <label class="field"><span>欧盟责任人名称</span><input id="responsible-name" type="text"></label>
+              <label class="field"><span>欧盟责任人电子地址</span><input id="responsible-email" type="email"></label>
+              <label class="field full"><span>欧盟责任人邮政地址</span><input id="responsible-address" type="text"></label>
+              <label class="field full"><span>档案编号/本地记录引用（可选）</span><input id="offer-source-ref" type="text" maxlength="300" placeholder="例如 DOSSIER-2026-001"></label>
+              <label class="field full"><span>档案原文摘录（可选）</span><textarea id="offer-source-excerpt" rows="4" maxlength="12000" placeholder="粘贴可核对上述字段的连续原文；模型只能定位逐字引用，不能补全缺失值。"></textarea></label>
+            </div>
+            <p class="field-note">缺失字段会保持空值。模型不生成制造商、欧盟责任人、地址、邮箱、产品标识或安全信息。</p>
+          </div>
+
+          <label class="check-field ai-source-field">
+            <input id="ai-generated" type="checkbox">
+            <span>该图片包含 AI 生成或合成内容</span>
+          </label>
+
+          <button id="analyze-button" type="button" class="primary-button">
+            <span>开始发布前检查</span>
+            <b>→</b>
+          </button>
+          <p class="input-disclaimer">GlobalGuard 提供风险辅助，不构成法律意见；高风险结论必须保留人工复核。</p>
+        </section>
+
+        <section id="result-panel" class="result-panel empty" aria-live="polite">
+          <div id="result-empty" class="result-empty">
+            <div class="radar" aria-hidden="true"><span></span><i></i></div>
+            <p class="section-kicker">03 / 检查结果</p>
+            <h2>等待一次真实检查</h2>
+            <p>载入演示 SKU 或上传商品资料。结果会同时展示风险位置、适用依据、修复动作和复检记录。</p>
+            <ul>
+              <li>不把未来规则冒充当前处罚</li>
+              <li>不自动编造法律结论或企业信息</li>
+              <li>每条高风险都能回到官方来源</li>
+            </ul>
+          </div>
+
+          <div id="result-content" class="result-content hidden">
+            <div class="result-topline">
+              <div>
+                <span class="section-kicker">03 / 检查结果</span>
+                <h2 id="result-title">发布前风险报告</h2>
+              </div>
+              <span id="analysis-id" class="analysis-id"></span>
+            </div>
+
+            <div class="score-card">
+              <div id="score-ring" class="score-ring" title="规则风险分，不代表检测准确率、置信度或平台通过率"><span id="score-value">—</span><small>规则分 / 100</small></div>
+              <div class="score-copy">
+                <span id="status-pill" class="status-pill">等待结果</span>
+                <h3 id="score-heading">—</h3>
+                <p id="score-summary">—</p>
+              </div>
+              <div class="score-metrics">
+                <span><b id="metric-blockers">0</b>阻断项</span>
+                <span><b id="metric-review">0</b>人工复核</span>
+                <span><b id="metric-evidence">0</b>官方来源</span>
+              </div>
+            </div>
+
+            <div id="ai-telemetry" class="ai-telemetry"></div>
+
+            <div class="result-section-heading">
+              <div><span class="section-kicker">风险清单</span><h3>问题、依据与下一步</h3></div>
+              <span id="risk-count" class="count-badge">0 项</span>
+            </div>
+            <div id="risk-list" class="risk-list"></div>
+
+            <div id="fix-section" class="fix-section hidden">
+              <div class="result-section-heading">
+                <div><span class="section-kicker">04 / 最小修复</span><h3>生成候选修复，保留商品事实</h3></div>
+              </div>
+              <div id="fix-list" class="fix-list"></div>
+              <div id="repair-guard" class="repair-guard hidden">
+                <div class="repair-guard-heading">
+                  <div><span>区域保护蒙版</span><b id="repair-guard-status">等待检查</b></div>
+                  <em>本机确认 · 非法律审批</em>
+                </div>
+                <p id="repair-guard-summary"></p>
+                <div id="repair-region-list" class="repair-region-list"></div>
+                <label id="confirm-removal-field" class="check-field repair-confirm hidden">
+                  <input id="confirm-removal" type="checkbox">
+                  <span>我已查看橙色候选移除区，确认其中是后加促销/装饰内容，不是商品、包装标签或场景实体。</span>
+                </label>
+                <label class="check-field repair-confirm">
+                  <input id="confirm-protection" type="checkbox">
+                  <span id="confirm-protection-copy">我已核对保护区域和裁剪边界，确认售卖主体不会被裁伤。</span>
+                </label>
+                <p id="repair-guard-blocker" class="repair-guard-blocker hidden"></p>
+                <button id="use-safe-reframe" type="button" class="secondary-button safe-reframe-button hidden">改用不裁剪安全替代草稿</button>
+              </div>
+              <div id="before-after" class="before-after hidden">
+                <figure><figcaption>修复前</figcaption><img id="before-image" alt="修复前商品图"></figure>
+                <span class="compare-arrow">→</span>
+                <figure><figcaption>修复后</figcaption><img id="after-image" alt="修复后商品图"></figure>
+              </div>
+              <button id="download-fixed" type="button" class="secondary-button hidden">下载待复核图片草稿</button>
+              <button id="apply-fix" type="button" class="fix-button">执行可验证的最小修复 <span>↗</span></button>
+            </div>
+
+            <div id="recheck-section" class="recheck-section hidden">
+              <div class="recheck-copy">
+                <span class="section-kicker">05 / 重新检查</span>
+                <h3>修复完成不等于通过</h3>
+                <p>重新读取输出图、检查尺寸与边缘，并生成新编号。文字、装饰残留与商品完整性仍需人工复核。</p>
+              </div>
+              <button id="recheck-button" type="button" class="primary-button compact-button">重新检查修复结果 <b>→</b></button>
+              <div id="recheck-result" class="recheck-result hidden"></div>
+            </div>
+
+            <div class="audit-bar">
+              <div><span>审计链</span><b id="audit-chain">尚未完成</b></div>
+              <button id="export-audit" type="button" class="secondary-button">导出审计记录</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="principles">
+      <article><span>01</span><h3>事实优先</h3><p>规则、模型和人工判断分层记录，无法确认时明确说无法确认。</p></article>
+      <article><span>02</span><h3>来源可追溯</h3><p>每条高风险绑定来源、适用路径、检索日期和规则包版本。</p></article>
+      <article><span>03</span><h3>人工有出口</h3><p>法律适用、主体身份和安全信息不由生成模型替业务人员决定。</p></article>
+    </section>
+  </main>
+
+  <footer>
+    <span>GlobalGuard semifinal prototype</span>
+    <span>Route → Detect → Explain → Fix → Recheck</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

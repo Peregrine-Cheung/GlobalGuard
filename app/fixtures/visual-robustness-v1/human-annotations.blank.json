@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "globalguard-visual-robustness-v1",
+  "annotationStatus": "blank-human-review-template",
+  "instructions": "标注者只查看SVG，不查看任何答案文件或模型结果；完成后填写annotator、reviewedAt和每个humanLabel。",
+  "annotator": null,
+  "reviewedAt": null,
+  "cases": [
+    {
+      "id": "robustness-01",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-02",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-03",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-04",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-05",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-06",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-07",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-08",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-09",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "robustness-10",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "schemaVersion": "1.0",
+  "startedAt": "2026-09-04T12:37:56.123Z",
+  "kind": "open-license-real-photo-development-check",
+  "modelRouterSha256": "5804e31351e8695d945c1b27171c0681a0f968d4ed57e67afa6040325ae50496",
+  "rulepackSha256": "d9752b4667fa63172f855638511e90ad9d2a43e902872bccff2dedf9eca12548",
+  "gitHead": "74fd14032a12b0b2837250c3425b0e073626fae3",
+  "notice": "开发检查不是独立人工评测或准确率。每次新上下文，无预期标签。原始 JPEG 直达应用后端，与UI转PNG不是同一次请求。",
+  "plannedCases": [
+    "tray-deep",
+    "basket-clothes",
+    "drawers-store"
+  ],
+  "cases": [
+    {
+      "id": "tray-deep",
+      "sourceSha256": "a4ca61a57819fe981d374079ab02b2f771161bd325ca6066f635413ebf0e8643",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "深型开口收纳盒",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "tray-deep.jpg",
+          "width": 1280,
+          "height": 853,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "c41c2e78-ff1a-4cf9-86fa-48c7bab122e2",
+        "analyzedAt": "2026-09-04T12:38:02.015Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 94,
+          "status": "review",
+          "totalRisks": 2,
+          "blockerCount": 0,
+          "reviewCount": 2,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "860c5775db93",
+            "ruleId": "google_image_link",
+            "route": "US_GOOGLE",
+            "severity": "warning",
+            "category": "Image Quality / Authenticity",
+            "title": "疑似计算机生成图像(CGI)需核验",
+            "finding": "商品图片呈现完美的几何形态与均匀光照，缺乏真实摄影常见的微小瑕疵或环境反射，视觉特征符合3D渲染图标准。",
+            "whyItMatters": "虽然规则未明确禁止渲染图，但过度完美的CGI素材可能影响用户对实物材质与尺寸的准确判断，需确认该风格是否符合当前品类发布规范。",
+            "action": "人工复核该渲染图是否被允许用于此品类，或建议补充实拍细节图以佐证实物一致性。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "深型开口收纳盒",
+          "category": "home-storage",
+          "image": {
+            "name": "tray-deep.jpg",
+            "width": 1280,
+            "height": 853,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "1ee959a54d4ce566ee9fe89e87c030b617c103144cd785ef31c95500ef433486",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "d0be4d38e017dca5"
+        },
+        "ai": {
+          "status": "live",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-8e9fb74d-b752-4988-bda3-3d1fc05bfb02",
+          "usage": {
+            "promptTokens": 1580,
+            "completionTokens": 275,
+            "totalTokens": 1855
+          },
+          "latencyMs": 5715,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 5715,
+              "fallback": false,
+              "requestId": "chatcmpl-8e9fb74d-b752-4988-bda3-3d1fc05bfb02",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "NONE",
+            "visualObservation": "图片展示了一个橙色长方形塑料收纳盒，置于纯白背景上。盒体表面光滑无纹理，边缘锐利，光影过渡极其均匀且缺乏自然噪点，呈现高度写实的3D渲染或CGI风格。图片中未见任何促销文字、水印、装饰边框或遮挡物。"
+          }
+        }
+      }
+    },
+    {
+      "id": "basket-clothes",
+      "sourceSha256": "ec93f598773e4e3eebc8b0687c3b4bda22d779b1032b2dc72f2d7748fa560840",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "装有衣物的洗衣篮",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "basket-clothes.jpg",
+          "width": 1280,
+          "height": 952,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "86652320-0171-4e40-919a-02e19ed24e09",
+        "analyzedAt": "2026-09-04T12:38:08.087Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 94,
+          "status": "review",
+          "totalRisks": 2,
+          "blockerCount": 0,
+          "reviewCount": 2,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "04dfef45e829",
+            "ruleId": "google_image_size_transition",
+            "route": "US_GOOGLE",
+            "severity": "warning",
+            "category": "Image Quality",
+            "title": "Future Image Size Requirement Check",
+            "finding": "当前图片目测分辨率较高，但需核实原始文件尺寸是否满足2027-01-31生效的500x500像素最低要求。",
+            "whyItMatters": "根据Google Merchant Center政策变更，未来商品图片最小尺寸将从100x100提升至500x500，不合规将影响商品展示。",
+            "action": "请复核图片原始分辨率，确保宽和高均大于等于500像素以符合未来标准。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_size_transition",
+                "title": "Google Merchant Center：商品图片尺寸要求变更",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/12159030?hl=en-GB",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "装有衣物的洗衣篮",
+          "category": "home-storage",
+          "image": {
+            "name": "basket-clothes.jpg",
+            "width": 1280,
+            "height": 952,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "4250f8292c1362f6187bcd0e50ab875bac586fcd4e1a0d381452fb162d58333f",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "79b809fa9f4a2424"
+        },
+        "ai": {
+          "status": "live",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-da4d700a-7d74-4383-90a8-a3396a3a0de1",
+          "usage": {
+            "promptTokens": 1700,
+            "completionTokens": 278,
+            "totalTokens": 1978
+          },
+          "latencyMs": 6037,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 6037,
+              "fallback": false,
+              "requestId": "chatcmpl-da4d700a-7d74-4383-90a8-a3396a3a0de1",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "IES",
+            "visualObservation": "图片展示了一个蓝色塑料镂空洗衣篮，放置在黄色墙砖和绿色地砖的角落。篮内装有白色、黑色及红色的衣物（可见一只印有'IES'字样的灰色袜子）。画面为实景拍摄，无促销叠字、装饰边框或水印遮挡，光线自然，主体清晰。"
+          }
+        }
+      }
+    },
+    {
+      "id": "drawers-store",
+      "sourceSha256": "0024797c46a6500b5bbf5993bb8acb9b8c5dbb954de7cc3824fff90f0823da5d",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "货架上的抽屉式收纳柜",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "drawers-store.jpg",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "19497644-2e4b-438e-ba37-fb45e9106464",
+        "analyzedAt": "2026-09-04T12:38:17.405Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 76,
+          "status": "review",
+          "totalRisks": 3,
+          "blockerCount": 0,
+          "reviewCount": 3,
+          "evidenceCount": 2
+        },
+        "risks": [
+          {
+            "id": "dfe6e6905e90",
+            "ruleId": "google_image_link",
+            "route": "US_GOOGLE",
+            "severity": "high",
+            "category": "image_quality",
+            "title": "禁止使用零售环境实拍图",
+            "finding": "图片显示商品置于商店货架上，包含明显的黄色价格标签（$19.99）及周围其他商品，属于零售环境实拍图而非专业商品主图。",
+            "whyItMatters": "Google Merchant Center 要求主图必须展示商品本身，不得包含促销文本、价格标签或零售环境背景，以免误导用户或降低搜索体验。",
+            "action": "更换为纯白背景、无价格标签且无周围环境干扰的专业商品摄影图。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "13b6af9453fe",
+            "ruleId": "google_image_size_transition",
+            "route": "US_GOOGLE",
+            "severity": "warning",
+            "category": "image_dimensions",
+            "title": "图片尺寸需满足未来最低标准",
+            "finding": "当前图片虽可能满足现行最小尺寸（100x100），但作为家居收纳类目，建议提前适配2027年1月31日生效的500x500像素最低标准以确保长期合规。",
+            "whyItMatters": "平台正在过渡到更高的图片质量要求，低分辨率图片在未来可能被限制展示或影响广告排名。",
+            "action": "确认原图分辨率是否达到500x500像素，若不足请上传高清版本。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_size_transition",
+                "title": "Google Merchant Center：商品图片尺寸要求变更",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/12159030?hl=en-GB",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "货架上的抽屉式收纳柜",
+          "category": "home-storage",
+          "image": {
+            "name": "drawers-store.jpg",
+            "width": 960,
+            "height": 1280,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "8738db7c2b0386ee147a7b97d31a079008094dd5ca19b99b6acbc95497cccfe5",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "0ebcc360de646268"
+        },
+        "ai": {
+          "status": "live",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-b693b149-5316-46ac-b0ad-f76a0785cc5a",
+          "usage": {
+            "promptTokens": 1701,
+            "completionTokens": 487,
+            "totalTokens": 2188
+          },
+          "latencyMs": 9308,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 9308,
+              "fallback": false,
+              "requestId": "chatcmpl-b693b149-5316-46ac-b0ad-f76a0785cc5a",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "Sterilite Weave 19.99 STORAGE DRAW",
+            "visualObservation": "图片为实体店货架拍摄视角，主体为灰色编织纹理塑料收纳柜。左下角可见黄色价格标签显示'19.99'及'STORAGE DRAW'字样。柜体正面贴有包含品牌'Sterilite'和产品系列'Weave'的实物包装贴纸。背景可见商店天花板灯光及右侧墙面装饰图案。无促销叠字、水印或遮挡，清晰度良好。"
+          }
+        }
+      }
+    }
+  ],
+  "overall": "selected_backend_responses_received_not_quality_pass",
+  "finishedAt": "2026-09-04T12:38:17.408Z"
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GlobalGuard · 人工盲标工作台</title>
+  <link rel="stylesheet" href="/annotation.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="/">GlobalGuard</a>
+  <nav><a href="/visual-fixtures.html">只看图片</a><a href="/validation.html">验证中心</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">LOCAL · BLIND REVIEW</p>
+      <h1><span id="dataset-label">基础六图</span>人工盲标工作台</h1>
+      <p>只根据当前图片填写。页面不会读取模型结果、构造答案或类别提示；草稿仅保存在当前浏览器。</p>
+    </div>
+    <aside>
+      <span id="progress-count">0 / 6</span>
+      <b>已选择 OCR 状态</b>
+      <div class="progress"><i id="progress-bar"></i></div>
+    </aside>
+  </section>
+
+  <section class="controls">
+    <label>标注者姓名或代号<input id="annotator" maxlength="100" autocomplete="off" placeholder="例如：ZZX-01"></label>
+    <div class="actions">
+      <label class="file-button">导入草稿<input id="import-file" type="file" accept="application/json,.json"></label>
+      <button id="validate-button" type="button">校验完整性</button>
+      <button id="export-button" type="button" class="primary">校验并导出</button>
+      <button id="reset-button" type="button" class="danger">清空本地草稿</button>
+    </div>
+    <p id="status-message" class="status" role="status">尚未校验。请先独立完成全部<span id="case-count-label">6张</span>图片。</p>
+  </section>
+
+  <section id="case-list" class="case-list" aria-label="盲标图片"></section>
+
+  <section class="boundary">
+    <h2>结果边界</h2>
+    <p>导出文件是单人复核标签，不是多人一致性金标准，也不能单独证明模型准确率、法律正确率或平台审核结果。</p>
+  </section>
+</main>
+<template id="case-template">
+  <article class="case-card">
+    <div class="image-pane"><div class="image-stage"><img alt=""><div class="box-layer"></div></div><strong></strong><small>添加文字区域后可点击“图上框选”，直接拖拽生成坐标。</small></div>
+    <div class="form-pane">
+      <label>OCR 状态<select data-field="ocrStatus"><option value="">请选择</option><option value="readable_text">存在可可靠转写文字</option><option value="unreadable_text_seen">看见文字痕迹但无法可靠转写</option><option value="no_text_seen">本次未看见文字迹象</option></select></label>
+      <label>完整逐字文本<textarea data-field="ocrText" rows="2" placeholder="多区域按从上到下、从左到右逐行填写；无可靠文字填 NONE"></textarea></label>
+      <div class="group-head"><div><b>文字区域</b><small>最多8个；坐标为0–1的 x / y / width / height</small></div><button type="button" data-action="add-region">添加区域</button></div>
+      <div data-list="regions" class="dynamic-list"></div>
+      <div class="group-head"><div><b>待核可见事实</b><small>只选明确可见现象，最多4项</small></div><button type="button" data-action="add-fact">添加事实</button></div>
+      <div data-list="facts" class="dynamic-list"></div>
+      <label>边界备注<textarea data-field="notes" rows="2" maxlength="1000" placeholder="记录不确定位置，不写法律或平台裁定"></textarea></label>
+    </div>
+  </article>
+</template>
+<script type="module" src="/annotation.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "suiteId": "globalguard-model-fact-contracts-v1",
+  "datasetType": "synthetic-contract-conformance-suite",
+  "notice": "本套件只证明确定性结构校验器对合成接受/拒绝案例的行为，不测量模型准确率、真实商品合规率或法律结论正确率。",
+  "modelAccuracyMeasured": false,
+  "legalCorrectnessMeasured": false,
+  "policies": [
+    {
+      "route": "US_GOOGLE",
+      "policyVersion": "us-visual-facts-v7",
+      "fixture": "us-visual-facts-v4/cases.json",
+      "modelMayReturn": "图片可见事实、OCR三态、文字区域和区域绑定",
+      "decisionOwner": "本地规则与人工复核",
+      "cases": 9,
+      "expectedAccept": 2,
+      "expectedReject": 7,
+      "acceptPathsPassed": 2,
+      "rejectPathsPassed": 7,
+      "passed": 9,
+      "failures": []
+    },
+    {
+      "route": "CN_ADS",
+      "policyVersion": "cn-ad-facts-v2",
+      "fixture": "cn-ad-facts-v2/cases.json",
+      "modelMayReturn": "标题、文案或可靠图片文字中的逐字主张、数字和引证",
+      "decisionOwner": "本地规则与人工复核",
+      "cases": 9,
+      "expectedAccept": 2,
+      "expectedReject": 7,
+      "acceptPathsPassed": 2,
+      "rejectPathsPassed": 7,
+      "passed": 9,
+      "failures": []
+    },
+    {
+      "route": "EU_GPSR",
+      "policyVersion": "eu-offer-facts-v2",
+      "fixture": "eu-offer-facts-v2/cases.json",
+      "modelMayReturn": "页面已有字段的逐字值和用户档案中的连续短引用",
+      "decisionOwner": "本地规则与人工复核",
+      "cases": 9,
+      "expectedAccept": 2,
+      "expectedReject": 7,
+      "acceptPathsPassed": 2,
+      "rejectPathsPassed": 7,
+      "passed": 9,
+      "failures": []
+    }
+  ],
+  "totals": {
+    "policies": 3,
+    "cases": 27,
+    "passed": 27,
+    "failed": 0,
+    "allPassed": true
+  }
+}

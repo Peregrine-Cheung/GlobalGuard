@@ -1,0 +1,45 @@
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node.js dependencies and generated output
+node_modules/
+.next/
+dist/
+build/
+coverage/
+
+# Local logs and databases
+*.log
+*.sqlite
+*.sqlite3
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Reproducible render/inspection artifacts
+tmp/
+
+# Redundant portable handoff archives (source files remain versioned)
+handoff/*.zip
+
+# Private event correspondence: keep originals locally, publish only a summary.
+app/docs/evidence/token-plan-authorization-*.png

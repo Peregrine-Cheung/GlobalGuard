@@ -1,0 +1,400 @@
+{
+  "schemaVersion": "1.0",
+  "startedAt": "2026-09-04T12:41:53.598Z",
+  "kind": "open-license-real-photo-development-check",
+  "modelRouterSha256": "e202e28c7dfb37b17a7389ad95d1a4900eeb1add280219be0695f1c4adabc189",
+  "visualPolicySha256": "8eda153c5e2302854ce49e558f2069585291c91403e0d275699be7098d7ca128",
+  "rulepackSha256": "d9752b4667fa63172f855638511e90ad9d2a43e902872bccff2dedf9eca12548",
+  "gitHead": "74fd14032a12b0b2837250c3425b0e073626fae3",
+  "notice": "开发检查不是独立人工评测或准确率。每次新上下文，无预期标签。原始 JPEG 直达应用后端，与UI转PNG不是同一次请求。",
+  "plannedCases": [
+    "tray-deep",
+    "basket-clothes",
+    "drawers-store"
+  ],
+  "cases": [
+    {
+      "id": "tray-deep",
+      "sourceSha256": "a4ca61a57819fe981d374079ab02b2f771161bd325ca6066f635413ebf0e8643",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "深型开口收纳盒",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "tray-deep.jpg",
+          "width": 1280,
+          "height": 853,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "5e3ad25c-c3c9-42f5-92d9-89fd296b4da9",
+        "analyzedAt": "2026-09-04T12:41:56.697Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 100,
+          "status": "review",
+          "totalRisks": 1,
+          "blockerCount": 0,
+          "reviewCount": 1,
+          "evidenceCount": 0
+        },
+        "risks": [
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "深型开口收纳盒",
+          "category": "home-storage",
+          "image": {
+            "name": "tray-deep.jpg",
+            "width": 1280,
+            "height": 853,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "1ee959a54d4ce566ee9fe89e87c030b617c103144cd785ef31c95500ef433486",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "856b55d6c2879103"
+        },
+        "ai": {
+          "status": "live",
+          "observationPolicy": "us-visual-facts-v1",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-7889d4a9-cbf4-4852-896a-f76878138969",
+          "usage": {
+            "promptTokens": 1588,
+            "completionTokens": 103,
+            "totalTokens": 1691
+          },
+          "latencyMs": 2922,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 2922,
+              "fallback": false,
+              "requestId": "chatcmpl-7889d4a9-cbf4-4852-896a-f76878138969",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "NONE",
+            "visualObservation": "画面主体为一个橙色长方体塑料收纳盒，置于纯白背景中。盒子呈开口状态，无盖，内部空置。盒口边缘设计有凹槽式把手结构，侧面可见垂直加强筋及堆叠卡扣细节。表面呈现哑光质感，光照均匀，底部有自然投影。未见任何贴纸、标签或后加文字层。"
+          }
+        }
+      }
+    },
+    {
+      "id": "basket-clothes",
+      "sourceSha256": "ec93f598773e4e3eebc8b0687c3b4bda22d779b1032b2dc72f2d7748fa560840",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "装有衣物的洗衣篮",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "basket-clothes.jpg",
+          "width": 1280,
+          "height": 952,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "94e0ab79-c897-403a-98cb-5fd6d800850f",
+        "analyzedAt": "2026-09-04T12:42:00.262Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 90,
+          "status": "review",
+          "totalRisks": 2,
+          "blockerCount": 0,
+          "reviewCount": 2,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "fc5ebd7823d4",
+            "ruleId": "GG-US-VISUAL-MULTIPLE-PRODUCTS",
+            "route": "US_GOOGLE",
+            "severity": "medium",
+            "category": "可见事实待复核",
+            "title": "出现多件物品，需确认售卖范围",
+            "finding": "模型观察（非文字）：篮内包含多件不同颜色和款式的衣物（如袜子、白色布料等），若商品仅为洗衣篮，需确认这些衣物是否作为配件赠送或仅为展示道具。",
+            "whyItMatters": "最佳实践核查，不是自动违规裁定：主图最佳实践关注实际售卖的商品及随附物；不能仅凭多件陈列断言违规或认定为套装。",
+            "action": "请卖家确认单件、套装或配件范围，必要时重新选择主图。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "装有衣物的洗衣篮",
+          "category": "home-storage",
+          "image": {
+            "name": "basket-clothes.jpg",
+            "width": 1280,
+            "height": 952,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "4250f8292c1362f6187bcd0e50ab875bac586fcd4e1a0d381452fb162d58333f",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "257a32ac1eb8d3de"
+        },
+        "ai": {
+          "status": "live",
+          "observationPolicy": "us-visual-facts-v1",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-1285746d-2042-457a-a8d2-6b46a75200ad",
+          "usage": {
+            "promptTokens": 1708,
+            "completionTokens": 169,
+            "totalTokens": 1877
+          },
+          "latencyMs": 3547,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 3547,
+              "fallback": false,
+              "requestId": "chatcmpl-1285746d-2042-457a-a8d2-6b46a75200ad",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "NONE",
+            "visualObservation": "画面显示一个蓝色镂空塑料洗衣篮放置在墙角，背景为黄色方形瓷砖墙面和绿色方形地砖。篮内装有杂乱堆放的衣物，包括白色织物、黑色袜子（可见倒置数字'23'及部分字母）以及红黑配色的织物。篮子顶部边缘有黑色加固环及金属连接件。"
+          }
+        }
+      }
+    },
+    {
+      "id": "drawers-store",
+      "sourceSha256": "0024797c46a6500b5bbf5993bb8acb9b8c5dbb954de7cc3824fff90f0823da5d",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "货架上的抽屉式收纳柜",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "drawers-store.jpg",
+          "width": 960,
+          "height": 1280,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "4d0270e8-e853-4d54-b41e-a70d12b61d10",
+        "analyzedAt": "2026-09-04T12:42:05.875Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 72,
+          "status": "review",
+          "totalRisks": 3,
+          "blockerCount": 0,
+          "reviewCount": 3,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "d5515ee70650",
+            "ruleId": "GG-US-VISUAL-PRICE-TEXT",
+            "route": "US_GOOGLE",
+            "severity": "high",
+            "category": "可见事实待复核",
+            "title": "图片含价格文字，需确认是否适合主图",
+            "finding": "模型观察（场景实体）：图片底部货架边缘可见黄色价签，包含文字'STORAGE DRAWER'及数字'19.99'。",
+            "whyItMatters": "最低要求相关核查：主图要求限制价格信息；实物价签与后加叠字应区分记录，但实物价签不自动免除图片适用性核查。",
+            "action": "核实价签归属；优先重新拍摄明确售卖的商品，不把旧价签抄成当前售价。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "109aa8a44750",
+            "ruleId": "GG-US-VISUAL-MULTIPLE-PRODUCTS",
+            "route": "US_GOOGLE",
+            "severity": "medium",
+            "category": "可见事实待复核",
+            "title": "出现多件物品，需确认售卖范围",
+            "finding": "模型观察（非文字）：画面中并排陈列着两组相同的收纳柜商品，左侧商品被画框截断，仅显示部分主体。",
+            "whyItMatters": "最佳实践核查，不是自动违规裁定：主图最佳实践关注实际售卖的商品及随附物；不能仅凭多件陈列断言违规或认定为套装。",
+            "action": "请卖家确认单件、套装或配件范围，必要时重新选择主图。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "货架上的抽屉式收纳柜",
+          "category": "home-storage",
+          "image": {
+            "name": "drawers-store.jpg",
+            "width": 960,
+            "height": 1280,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "8738db7c2b0386ee147a7b97d31a079008094dd5ca19b99b6acbc95497cccfe5",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "9176231fbda7cafb"
+        },
+        "ai": {
+          "status": "live",
+          "observationPolicy": "us-visual-facts-v1",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-8e1cddf3-e779-40d0-b4eb-7e1f508ef21e",
+          "usage": {
+            "promptTokens": 1709,
+            "completionTokens": 269,
+            "totalTokens": 1978
+          },
+          "latencyMs": 5602,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 5602,
+              "fallback": false,
+              "requestId": "chatcmpl-8e1cddf3-e779-40d0-b4eb-7e1f508ef21e",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "Sterilite Weave STORAGE DRAWER 19.99",
+            "visualObservation": "图片展示了放置在商店货架上的灰色塑料抽屉式收纳柜，柜体表面具有编织纹理，配有黑色把手。画面中可见两列收纳柜，右侧一列完整展示四层抽屉结构，左侧一列部分可见。收纳柜正面贴有产品标签，印有品牌'Sterilite'及系列名'Weave'。底部货架边缘贴有黄色价格标签，显示文字'STORAGE DRAWER'及价格'19.99'。背景为带有几何图案的墙面及顶部照明设施。"
+          }
+        }
+      }
+    }
+  ],
+  "overall": "selected_backend_responses_received_not_quality_pass",
+  "finishedAt": "2026-09-04T12:42:05.879Z"
+}

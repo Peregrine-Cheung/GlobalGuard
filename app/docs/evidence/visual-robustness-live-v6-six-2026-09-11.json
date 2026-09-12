@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0",
+  "evidenceKind": "sanitized-six-request-targeted-single-human-agreement-summary",
+  "datasetId": "globalguard-visual-robustness-v1",
+  "provider": "aliyun-token-plan",
+  "model": "qwen3.7-plus",
+  "observationPolicy": "us-visual-facts-v6",
+  "executionControls": {
+    "authorizedRequests": 6,
+    "requestsAttempted": 6,
+    "supplierResponses": 6,
+    "localStructureContractsPassed": 6,
+    "retryDisabled": true,
+    "fallbackDisabled": true,
+    "tokenBudget": 15000,
+    "totalTokens": 12372
+  },
+  "evaluation": {
+    "selectedCases": 6,
+    "strictSingleHumanAgreement": 2,
+    "strictSingleHumanAgreementRate": 0.3333,
+    "v5StrictAgreementOnSameSelectedCases": 0,
+    "v5StrictAgreementRateOnSameSelectedCases": 0,
+    "modelAccuracyMeasured": false,
+    "legalCorrectnessMeasured": false,
+    "realMerchantPerformanceMeasured": false,
+    "referenceStatus": "completed-single-human-review-not-consensus-gold"
+  },
+  "cases": [
+    {
+      "id": "robustness-01",
+      "requestId": "chatcmpl-07bbe3f2-ac86-4551-b2bd-312bae625a89",
+      "tokens": 2000,
+      "strictAgreement": true,
+      "checks": { "ocrStatus": true, "ocrText": true, "regionCount": true, "regionSemantics": true, "regionLocalization": true, "visualFactSet": true },
+      "changeFromV5": ["neutral_staging_card_false_positive_removed"]
+    },
+    {
+      "id": "robustness-04",
+      "requestId": "chatcmpl-2af09213-37b5-435d-81fb-6639e322db71",
+      "tokens": 2062,
+      "strictAgreement": false,
+      "checks": { "ocrStatus": true, "ocrText": true, "regionCount": true, "regionSemantics": true, "regionLocalization": true, "visualFactSet": false },
+      "changeFromV5": ["neutral_staging_card_false_positive_removed", "low_clarity_kind_detected"],
+      "remainingMismatch": ["non_text_fact_bound_to_product_text_region"]
+    },
+    {
+      "id": "robustness-05",
+      "requestId": "chatcmpl-1bc9cd6f-0f19-4983-838b-a9a94426fa1d",
+      "tokens": 2254,
+      "strictAgreement": false,
+      "checks": { "ocrStatus": true, "ocrText": true, "regionCount": true, "regionSemantics": true, "regionLocalization": true, "visualFactSet": false },
+      "changeFromV5": ["neutral_staging_card_false_positive_removed", "three_spatial_text_regions_recovered"],
+      "remainingMismatch": ["promotional_finding_only_referenced_first_of_three_regions"]
+    },
+    {
+      "id": "robustness-07",
+      "requestId": "chatcmpl-dd39822e-0f92-409c-8037-bf5fd6671fc4",
+      "tokens": 2090,
+      "strictAgreement": false,
+      "checks": { "ocrStatus": true, "ocrText": true, "regionCount": true, "regionSemantics": true, "regionLocalization": true, "visualFactSet": false },
+      "changeFromV5": ["neutral_staging_card_false_positive_removed", "occluded_product_kind_detected"],
+      "remainingMismatch": ["non_text_fact_bound_to_product_text_region"]
+    },
+    {
+      "id": "robustness-08",
+      "requestId": "chatcmpl-e0fefd01-f660-462e-893a-96a8c1662dd2",
+      "tokens": 1993,
+      "strictAgreement": false,
+      "checks": { "ocrStatus": true, "ocrText": true, "regionCount": true, "regionSemantics": false, "regionLocalization": true, "visualFactSet": true },
+      "changeFromV5": [],
+      "remainingMismatch": ["detached_vertical_tag_origin_product_instead_of_scene"]
+    },
+    {
+      "id": "robustness-10",
+      "requestId": "chatcmpl-d4398dfa-1b96-4ea3-8679-8de8da97c530",
+      "tokens": 1973,
+      "strictAgreement": true,
+      "checks": { "ocrStatus": true, "ocrText": true, "regionCount": true, "regionSemantics": true, "regionLocalization": true, "visualFactSet": true },
+      "changeFromV5": ["no_text_seen_contract_conflict_removed", "multiple_products_fact_retained"]
+    }
+  ],
+  "crossCaseConclusion": {
+    "neutralStagingCardFalsePositivesInRetestedCases": { "v5": 4, "v6": 0 },
+    "allOcrTextAndRegionChecksPassed": true,
+    "allLocalizationChecksPassed": true,
+    "remainingWork": [
+      "Define non-text finding origin and region binding semantics.",
+      "Require one promotional finding per separately boxed promotional region.",
+      "Strengthen outside-product-silhouette tag origin guidance."
+    ]
+  },
+  "sourceResult": {
+    "path": "tmp/visual-robustness-eval/result-1789110488365.json",
+    "sha256": "7AF9A0A32ABA3AA7F7BEC48002DE5D6D60F2A87BF68F342E479D7A0F79C9E8B7"
+  },
+  "checkpoint": {
+    "path": "tmp/visual-robustness-eval/checkpoint-v6-six-1789110453170.json",
+    "sha256": "76209A4A747FEDF736C4520F57DCBDB2034AE4D7E80D737DB0A267AE3B59E71C"
+  },
+  "notice": "本报告只记录六张确定性合成挑战图与一次单人人工复核的一致性变化，不构成模型准确率、真实商家图片表现、法律正确率或平台审核通过率。"
+}

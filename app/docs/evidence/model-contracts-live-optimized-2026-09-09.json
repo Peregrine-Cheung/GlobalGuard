@@ -1,0 +1,44 @@
+{
+  "evidenceId": "globalguard-live-contract-optimization-2026-09-09",
+  "inputClassification": "synthetic-non-sensitive",
+  "provider": "aliyun-token-plan",
+  "model": "qwen3.7-plus",
+  "fallbackDisabled": true,
+  "automaticRetryDisabled": true,
+  "runs": [
+    {
+      "route": "US_GOOGLE",
+      "policyVersion": "us-visual-facts-v4",
+      "requestId": "chatcmpl-03acb7dd-0722-4ae3-812a-0b7804fa3163",
+      "usage": { "promptTokens": 1072, "completionTokens": 556, "totalTokens": 1628 },
+      "validated": true,
+      "validatedTextRegions": 3,
+      "validatedFindings": 3
+    },
+    {
+      "route": "CN_ADS",
+      "policyVersion": "cn-ad-facts-v2",
+      "requestId": "chatcmpl-1464bcde-fa58-4583-9a3b-ec0fd537d3d2",
+      "usage": { "promptTokens": 516, "completionTokens": 308, "totalTokens": 824 },
+      "validated": true,
+      "validatedClaims": 4
+    },
+    {
+      "route": "EU_GPSR",
+      "policyVersion": "eu-offer-facts-v2",
+      "requestId": "chatcmpl-2fc6bd30-137e-4329-85d9-1e944812ab90",
+      "usage": { "promptTokens": 548, "completionTokens": 400, "totalTokens": 948 },
+      "validated": true,
+      "validatedFields": 9
+    }
+  ],
+  "totals": { "providerRequests": 3, "totalTokens": 3400, "validatedRuns": 3 },
+  "boundaries": {
+    "modelAccuracyMeasured": false,
+    "ocrAccuracyMeasured": false,
+    "regionAccuracyMeasured": false,
+    "legalCorrectnessMeasured": false,
+    "platformApprovalClaimed": false,
+    "realMerchantEvidenceUsed": false
+  }
+}

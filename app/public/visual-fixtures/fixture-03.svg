@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="视觉评测fixture-03" data-fixture-id="fixture-03">
+  <rect width="720" height="720" fill="#f5f1e8"/>
+  <rect x="95" y="165" width="530" height="390" rx="34" fill="#ffffff" stroke="#d7d0c4" stroke-width="4"/>
+  <ellipse cx="360" cy="536" rx="215" ry="34" fill="#c7c2ba" opacity="0.42"/>
+  <path d="M195 270 L525 270 L490 500 Q360 540 230 500 Z" fill="#7c5a9e" stroke="#20313a" stroke-width="7"/>
+  <path d="M215 305 H505 M225 350 H495 M235 395 H485 M245 440 H475" fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="7"/>
+  <path d="M250 270 Q360 210 470 270" fill="none" stroke="#20313a" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#5f6670" opacity="0.58"><rect x="300" y="427" width="7" height="12"/><rect x="311" y="430" width="5" height="9"/><rect x="321" y="426" width="3" height="13"/><rect x="329" y="428" width="8" height="11"/><rect x="342" y="431" width="4" height="8"/><rect x="351" y="427" width="6" height="12"/><rect x="362" y="429" width="3" height="10"/><rect x="370" y="426" width="7" height="13"/><rect x="382" y="431" width="4" height="8"/><rect x="391" y="428" width="9" height="11"/><rect x="405" y="430" width="5" height="9"/><rect x="414" y="427" width="6" height="12"/></g>
+</svg>

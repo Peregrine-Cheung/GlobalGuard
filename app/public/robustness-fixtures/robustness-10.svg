@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-label="视觉鲁棒性评测 robustness-10" data-fixture-id="robustness-10">
+  <defs></defs>
+  <rect width="720" height="720" fill="#f4f0e8"/>
+  <rect x="82" y="156" width="556" height="416" rx="34" fill="#fff" stroke="#d4cdc1" stroke-width="4"/>
+  <ellipse cx="360" cy="539" rx="222" ry="31" fill="#aaa59d" opacity="0.33"/>
+  <path d="M78 320 L238 320 L221 510 Q158 532 95 510 Z" fill="#b98b3f" stroke="#20313a" stroke-width="6"/><path d="M482 320 L642 320 L625 510 Q562 532 499 510 Z" fill="#825c9d" stroke="#20313a" stroke-width="6"/>
+  
+</svg>

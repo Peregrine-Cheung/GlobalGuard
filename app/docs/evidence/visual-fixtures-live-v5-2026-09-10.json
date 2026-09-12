@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "globalguard-us-visual-fixtures-live-v5-2026-09-10",
+  "datasetId": "globalguard-visual-fixtures-v1",
+  "provider": "aliyun-token-plan",
+  "model": "qwen3.7-plus",
+  "inputClassification": "deterministic-synthetic-non-sensitive",
+  "fallbackDisabled": true,
+  "retryDisabled": true,
+  "baseline": {
+    "policyVersion": "us-visual-facts-v4",
+    "providerResponses": 6,
+    "contractPassed": 4,
+    "strictConstructionAgreement": 2,
+    "cases": 6,
+    "totalTokens": 9760,
+    "fullLocalResultSha256": "3c8e2e31c4144fb8a06597cc0efa2694ee80e22ea7e3ebb97bf51d24c88f6b62"
+  },
+  "targetedOptimizationCheck": {
+    "policyVersion": "us-visual-facts-v5",
+    "selectedCases": ["fixture-01", "fixture-02", "fixture-03", "fixture-05"],
+    "providerResponses": 4,
+    "contractPassed": 4,
+    "totalTokens": 7276,
+    "fullLocalResultSha256": "0e81dd7b25ded95818e344a2d870ca6844e545bebf24a73df68599bafd15c97e"
+  },
+  "final": {
+    "policyVersion": "us-visual-facts-v5",
+    "providerResponses": 6,
+    "contractPassed": 6,
+    "strictConstructionAgreement": 5,
+    "cases": 6,
+    "strictConstructionAgreementRate": 0.8333,
+    "totalTokens": 10917,
+    "requestIds": [
+      "chatcmpl-5fb17e5f-1471-43b8-8bca-61294785a8cc",
+      "chatcmpl-d43197b3-2142-4485-a4a7-bfcac709b267",
+      "chatcmpl-274acf89-1176-4cb8-bb51-1ba467465f49",
+      "chatcmpl-58a52bcd-5253-4e00-93ba-80fe6e50da79",
+      "chatcmpl-1bea071b-946e-4ce1-b918-5000b4b8e472",
+      "chatcmpl-7b2898b1-6529-4cc5-9f42-93caaf1a5015"
+    ],
+    "knownMismatch": {
+      "caseId": "fixture-03",
+      "challenge": "tiny-unreadable",
+      "observed": "模型返回no_text_seen，未检测到构造规范中的极小不可读字符状笔画。"
+    },
+    "fullLocalResultSha256": "c1a539fd19fd36c8291c42be5d779cfc0610451ccb82fdca45f90e673ffa2c2a"
+  },
+  "stageTotalProviderTokens": 27953,
+  "modelAccuracyMeasured": false,
+  "legalCorrectnessMeasured": false,
+  "realMerchantPerformanceMeasured": false,
+  "notice": "5/6仅为确定性合成夹具构造一致性，不是模型准确率、真实图片效果、法律正确率或平台通过率。"
+}

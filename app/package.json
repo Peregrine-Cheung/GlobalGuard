@@ -1,0 +1,34 @@
+{
+  "name": "globalguard-semifinal-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GlobalGuard 跨境图文合规智能体复赛演示版",
+  "scripts": {
+    "start": "node scripts/start-server.mjs",
+    "dev": "node scripts/start-server.mjs --watch",
+    "test": "node --test tests/*.test.mjs",
+    "evaluate": "node scripts/evaluate.mjs",
+    "evaluate:contracts": "node scripts/evaluate-model-contracts.mjs",
+    "check:contracts": "node scripts/evaluate-model-contracts.mjs --check",
+    "simulate:contracts": "node scripts/simulate-model-contract-attacks.mjs",
+    "verify:demo": "node scripts/verify-demo.mjs",
+    "build:visual-fixtures": "node scripts/build-visual-eval-fixtures.mjs --write",
+    "check:visual-fixtures": "node scripts/build-visual-eval-fixtures.mjs --check",
+    "build:robustness-fixtures": "node scripts/build-visual-robustness-fixtures.mjs --write",
+    "check:robustness-fixtures": "node scripts/build-visual-robustness-fixtures.mjs --check",
+    "preview:robustness-live": "node scripts/preview-robustness-live-eval.mjs",
+    "evaluate:robustness-live": "node scripts/evaluate-live-visual-robustness.mjs",
+    "check:browser": "node scripts/check-browser.mjs",
+    "check:model-router": "node scripts/check-model-router.mjs",
+    "check:us-contract": "node scripts/check-live-us-contract.mjs",
+    "evaluate:visual-live": "node scripts/evaluate-live-visual-fixtures.mjs",
+    "validate:annotations": "node scripts/validate-human-annotations.mjs",
+    "evaluate:visual-reference": "node scripts/evaluate-visual-reference.mjs",
+    "check:eu-contract": "node scripts/check-live-eu-contract.mjs",
+    "check:cn-contract": "node scripts/check-live-cn-contract.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

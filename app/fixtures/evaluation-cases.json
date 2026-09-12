@@ -1,0 +1,34 @@
+{
+  "datasetId": "globalguard-synthetic-regression-v1",
+  "datasetType": "synthetic-regression",
+  "createdAt": "2026-09-02",
+  "notice": "这些样本用于规则回归，不代表真实世界准确率，也不替代后续人工标注商品素材测试集。",
+  "cases": [
+    { "id": "US-001", "route": "US_GOOGLE", "label": "720px clean image", "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "US-002", "route": "US_GOOGLE", "label": "420px future readiness", "image": { "width": 420, "height": 420 }, "expectedStatus": "ready", "expectedRuleIds": ["GG-US-IMG-002"] },
+    { "id": "US-003", "route": "US_GOOGLE", "label": "below current hard minimum", "image": { "width": 80, "height": 80 }, "expectedStatus": "blocked", "expectedRuleIds": ["GG-US-IMG-001"] },
+    { "id": "US-004", "route": "US_GOOGLE", "label": "decorative border", "visualSignals": { "hasBorder": true }, "expectedStatus": "blocked", "expectedRuleIds": ["GG-US-IMG-003"] },
+    { "id": "US-005", "route": "US_GOOGLE", "label": "promotional overlay", "visualSignals": { "overlayText": "FREE SHIPPING", "hasPromotionalOverlay": true }, "expectedStatus": "blocked", "expectedRuleIds": ["GG-US-IMG-004"] },
+    { "id": "US-006", "route": "US_GOOGLE", "label": "AI image without metadata", "visualSignals": { "aiGenerated": true, "hasSyntheticMetadata": false }, "expectedStatus": "review", "expectedRuleIds": ["GG-US-IMG-005"] },
+    { "id": "US-007", "route": "US_GOOGLE", "label": "AI image with metadata", "visualSignals": { "aiGenerated": true, "hasSyntheticMetadata": true }, "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "US-008", "route": "US_GOOGLE", "label": "demo combined risks", "image": { "width": 420, "height": 420 }, "visualSignals": { "hasBorder": true, "overlayText": "BEST FREE SHIPPING", "hasPromotionalOverlay": true, "sampleLayout": "globalguard-v1" }, "expectedStatus": "blocked", "expectedRuleIds": ["GG-US-IMG-002", "GG-US-IMG-003", "GG-US-IMG-004"] },
+
+    { "id": "CN-001", "route": "CN_ADS", "label": "factual copy", "productCopy": "适用于衣柜和宿舍日常收纳。", "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "CN-002", "route": "CN_ADS", "label": "best claim", "productCopy": "全网最佳收纳方案。", "expectedStatus": "review", "expectedRuleIds": ["GG-CN-ADS-001"] },
+    { "id": "CN-003", "route": "CN_ADS", "label": "ranking claim", "productCopy": "销量第一的收纳箱。", "expectedStatus": "review", "expectedRuleIds": ["GG-CN-ADS-001", "GG-CN-ADS-002"] },
+    { "id": "CN-004", "route": "CN_ADS", "label": "numeric claim without evidence", "productCopy": "测试证明收纳效率提升 30%。", "expectedStatus": "review", "expectedRuleIds": ["GG-CN-ADS-002"] },
+    { "id": "CN-005", "route": "CN_ADS", "label": "numeric claim with evidence", "productCopy": "测试证明收纳效率提升 30%。", "claimEvidenceUrl": "INTERNAL-REPORT-001", "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "CN-006", "route": "CN_ADS", "label": "AI material undeclared", "visualSignals": { "aiGenerated": true }, "expectedStatus": "review", "expectedRuleIds": ["GG-CN-AI-001"] },
+    { "id": "CN-007", "route": "CN_ADS", "label": "AI material declared", "visualSignals": { "aiGenerated": true }, "aiLabelDeclared": true, "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "CN-008", "route": "CN_ADS", "label": "ordinary ordinal context", "productCopy": "第一次使用前擦拭，第一季度完成包装升级。", "expectedStatus": "ready", "expectedRuleIds": [] },
+
+    { "id": "EU-001", "route": "EU_GPSR", "label": "EU manufacturer complete offer", "offerFields": { "manufacturerCountry": "FR", "responsiblePersonName": "", "responsiblePersonPostalAddress": "", "responsiblePersonEmail": "" }, "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "EU-002", "route": "EU_GPSR", "label": "non-EU manufacturer complete offer", "expectedStatus": "ready", "expectedRuleIds": [] },
+    { "id": "EU-003", "route": "EU_GPSR", "label": "non-EU manufacturer missing responsible person", "offerFields": { "responsiblePersonName": "", "responsiblePersonPostalAddress": "", "responsiblePersonEmail": "" }, "expectedStatus": "blocked", "expectedRuleIds": ["GG-EU-GPSR-019B"] },
+    { "id": "EU-004", "route": "EU_GPSR", "label": "missing manufacturer identity", "offerFields": { "manufacturerName": "" }, "expectedStatus": "review", "expectedRuleIds": ["GG-EU-GPSR-019A"] },
+    { "id": "EU-005", "route": "EU_GPSR", "label": "missing safety assessment", "offerFields": { "safetyInfo": "" }, "expectedStatus": "review", "expectedRuleIds": ["GG-EU-GPSR-019A"] },
+    { "id": "EU-006", "route": "EU_GPSR", "label": "missing product identifier", "offerFields": { "productId": "" }, "expectedStatus": "review", "expectedRuleIds": ["GG-EU-GPSR-019A"] },
+    { "id": "EU-007", "route": "EU_GPSR", "label": "multiple offer gaps", "offerFields": { "manufacturerEmail": "", "safetyInfo": "", "responsiblePersonName": "", "responsiblePersonPostalAddress": "", "responsiblePersonEmail": "" }, "expectedStatus": "blocked", "expectedRuleIds": ["GG-EU-GPSR-019A", "GG-EU-GPSR-019B"] },
+    { "id": "EU-008", "route": "EU_GPSR", "label": "German manufacturer no separate responsible person", "offerFields": { "manufacturerCountry": "DE", "responsiblePersonName": "", "responsiblePersonPostalAddress": "", "responsiblePersonEmail": "" }, "expectedStatus": "ready", "expectedRuleIds": [] }
+  ]
+}

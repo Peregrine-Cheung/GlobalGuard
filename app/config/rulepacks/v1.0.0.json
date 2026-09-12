@@ -1,0 +1,83 @@
+{
+  "id": "globalguard-core-2026-09",
+  "version": "1.0.0",
+  "effectiveDate": "2026-09-02",
+  "scope": "家居收纳低监管品类演示；美国 Google Merchant、中国广告合规、欧盟 GPSR 在线要约信息",
+  "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。",
+  "routes": {
+    "US_GOOGLE": {
+      "label": "美国 · Google Merchant",
+      "shortLabel": "美国 Google",
+      "depth": "完整闭环"
+    },
+    "CN_ADS": {
+      "label": "中国 · 电商广告",
+      "shortLabel": "中国广告",
+      "depth": "深度规则与证据"
+    },
+    "EU_GPSR": {
+      "label": "欧盟 · GPSR 在线销售",
+      "shortLabel": "欧盟 GPSR",
+      "depth": "页面义务差异演示"
+    }
+  },
+  "sources": {
+    "google_image_link": {
+      "title": "Google Merchant Center：图片链接要求",
+      "publisher": "Google",
+      "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+      "retrievedAt": "2026-09-02",
+      "appliesTo": "US_GOOGLE"
+    },
+    "google_image_size_transition": {
+      "title": "Google Merchant Center：商品图片尺寸要求变更",
+      "publisher": "Google",
+      "url": "https://support.google.com/merchants/answer/12159030?hl=en-GB",
+      "retrievedAt": "2026-09-02",
+      "appliesTo": "US_GOOGLE"
+    },
+    "samr_advertising_guidance": {
+      "title": "市场监管总局：广告绝对化用语执法指南",
+      "publisher": "国家市场监督管理总局",
+      "url": "https://www.samr.gov.cn/ggjgs/tzgg/art/2023/art_183b5cb48d9e4f0dba67f9f912a913ba.html",
+      "retrievedAt": "2026-09-02",
+      "appliesTo": "CN_ADS"
+    },
+    "samr_citation_guidance_2026": {
+      "title": "市场监管总局：广告引用内容执法指南（2026）",
+      "publisher": "国家市场监督管理总局",
+      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/ggjgs/art/2026/art_8962fc1e4eb44a87b93d265af43b6940.html",
+      "retrievedAt": "2026-09-02",
+      "appliesTo": "CN_ADS"
+    },
+    "cac_ai_labeling": {
+      "title": "人工智能生成合成内容标识办法",
+      "publisher": "国家互联网信息办公室",
+      "url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
+      "retrievedAt": "2026-09-02",
+      "appliesTo": "CN_ADS"
+    },
+    "eu_gpsr_article_19": {
+      "title": "Regulation (EU) 2023/988, Article 19",
+      "publisher": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/988/2026-05-29/eng",
+      "retrievedAt": "2026-09-02",
+      "appliesTo": "EU_GPSR"
+    }
+  },
+  "rules": {
+    "US_GOOGLE": {
+      "hardMinimum": { "width": 100, "height": 100 },
+      "futureMinimum": { "width": 500, "height": 500, "enforcementDate": "2027-01-31" },
+      "promotionalTerms": ["free shipping", "best", "sale", "limited offer", "% off", "免邮", "促销", "折扣"]
+    },
+    "CN_ADS": {
+      "absoluteTerms": ["国家级", "最高级", "最佳", "顶级", "全网第一", "行业第一", "销量第一", "排名第一", "第一品牌", "100%", "百分之百", "永久", "绝对"],
+      "evidenceTerms": ["销量", "好评率", "提升", "降低", "增长", "减少", "用户选择", "测试证明"]
+    },
+    "EU_GPSR": {
+      "requiredOfferFields": ["manufacturerName", "manufacturerPostalAddress", "manufacturerEmail", "productId", "safetyInfo"],
+      "responsiblePersonFields": ["responsiblePersonName", "responsiblePersonPostalAddress", "responsiblePersonEmail"]
+    }
+  }
+}

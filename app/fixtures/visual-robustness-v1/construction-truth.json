@@ -1,0 +1,435 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "globalguard-visual-robustness-v1",
+  "createdOn": "2026-09-11",
+  "coordinateSystem": "normalized_xywh_top_left",
+  "samplingPlan": {
+    "cases": 10,
+    "neutralBlindReviewRequired": true,
+    "providerRequestsPlanned": 10,
+    "retryDisabled": true,
+    "fallbackDisabled": true
+  },
+  "notice": "确定性鲁棒性挑战集的构造真值，不是人工金标准、模型准确率或真实商家数据。",
+  "cases": [
+    {
+      "id": "robustness-01",
+      "challenge": "small-readable-product-code",
+      "filename": "robustness-01.svg",
+      "assetPath": "/robustness-fixtures/robustness-01.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "78a1ccd7abc348154edf20f586bdfbb42727423ab4563a624799391a447f2e75",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "LOT A17",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "LOT A17",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [
+              0.4083,
+              0.5653,
+              0.1833,
+              0.0333
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "robustness-02",
+      "challenge": "tiny-low-contrast-unreadable-strokes",
+      "filename": "robustness-02.svg",
+      "assetPath": "/robustness-fixtures/robustness-02.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "b1d52ce35065955f1efc7669ea5d1775520984957568c5c418d1ecc438e5e203",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "unreadable_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": null,
+            "origin": "product",
+            "readability": "unreadable",
+            "bbox": [
+              0.4194,
+              0.5847,
+              0.1611,
+              0.0167
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "low_clarity",
+            "textOrigin": "not_applicable",
+            "regionId": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "robustness-03",
+      "challenge": "rotated-scene-price-tag",
+      "filename": "robustness-03.svg",
+      "assetPath": "/robustness-fixtures/robustness-03.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "8cc737cff57a90ee7b0151e3b2afe92e7fc9c9ea23c0f97f1a2bee0028b2e687",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "$24.50\nCLEARANCE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "$24.50",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [
+              0.7389,
+              0.6667,
+              0.1917,
+              0.0722
+            ]
+          },
+          {
+            "id": "text-2",
+            "text": "CLEARANCE",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [
+              0.75,
+              0.7306,
+              0.175,
+              0.0306
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "price_text",
+            "textOrigin": "scene",
+            "regionId": "text-1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "robustness-04",
+      "challenge": "blurred-unreadable-product-label",
+      "filename": "robustness-04.svg",
+      "assetPath": "/robustness-fixtures/robustness-04.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "4c12897b57874ad658ebb905d221b2239b2aa7bea2e584c2a7582a483ae7dd05",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "unreadable_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": null,
+            "origin": "product",
+            "readability": "unreadable",
+            "bbox": [
+              0.375,
+              0.5,
+              0.25,
+              0.0597
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "low_clarity",
+            "textOrigin": "not_applicable",
+            "regionId": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "robustness-05",
+      "challenge": "spaced-promotional-words",
+      "filename": "robustness-05.svg",
+      "assetPath": "/robustness-fixtures/robustness-05.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "9476842899856cf0cabfcd8e721e3404dd2f46b30fedb7fbd18b15115f4b534b",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE\n50%\nOFF",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SALE",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [
+              0.1083,
+              0.0833,
+              0.1986,
+              0.0806
+            ]
+          },
+          {
+            "id": "text-2",
+            "text": "50%",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [
+              0.4083,
+              0.0833,
+              0.1833,
+              0.0806
+            ]
+          },
+          {
+            "id": "text-3",
+            "text": "OFF",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [
+              0.7083,
+              0.0833,
+              0.1639,
+              0.0806
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "promotional_overlay",
+            "textOrigin": "overlay",
+            "regionId": "text-1"
+          },
+          {
+            "kind": "promotional_overlay",
+            "textOrigin": "overlay",
+            "regionId": "text-2"
+          },
+          {
+            "kind": "promotional_overlay",
+            "textOrigin": "overlay",
+            "regionId": "text-3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "robustness-06",
+      "challenge": "low-contrast-readable-label",
+      "filename": "robustness-06.svg",
+      "assetPath": "/robustness-fixtures/robustness-06.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "900838b4ae8b82288924b45d70d5bfb99e45e9c646a2d4bd59e4b88a61bf0216",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "ECO HOME",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "ECO HOME",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [
+              0.3542,
+              0.4931,
+              0.2917,
+              0.0583
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "robustness-07",
+      "challenge": "partially-occluded-unreadable-label",
+      "filename": "robustness-07.svg",
+      "assetPath": "/robustness-fixtures/robustness-07.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "21dbfc635efb4e28a91aef5960a5e5f042fe327e501f5366e91d9e3f4e183e22",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "unreadable_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": null,
+            "origin": "product",
+            "readability": "unreadable",
+            "bbox": [
+              0.3514,
+              0.4944,
+              0.2972,
+              0.0653
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "robustness-08",
+      "challenge": "vertical-rotated-scene-text",
+      "filename": "robustness-08.svg",
+      "assetPath": "/robustness-fixtures/robustness-08.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "326916a40f55befd0bdd6680845df40791377576d42515d5b5187360101b0baf",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "HANDLE WITH CARE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "HANDLE WITH CARE",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [
+              0.7736,
+              0.3542,
+              0.0597,
+              0.3306
+            ]
+          }
+        ],
+        "visualFacts": []
+      }
+    },
+    {
+      "id": "robustness-09",
+      "challenge": "diagonal-watermark",
+      "filename": "robustness-09.svg",
+      "assetPath": "/robustness-fixtures/robustness-09.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "889eb4eb7352b510f821aba0d54954976e31ccbcf538e25aaafc5d6548db4cef",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SAMPLE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SAMPLE",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [
+              0.2611,
+              0.3958,
+              0.4778,
+              0.2139
+            ]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "watermark",
+            "textOrigin": "overlay",
+            "regionId": "text-1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "robustness-10",
+      "challenge": "no-text-multiple-object-control",
+      "filename": "robustness-10.svg",
+      "assetPath": "/robustness-fixtures/robustness-10.svg",
+      "dimensions": {
+        "width": 720,
+        "height": 720
+      },
+      "sha256": "bda43d920e86c33813011c8aa4f72f5e06ce57f6560153fd1dafcc9439f2ab52",
+      "sourceKind": "deterministic-synthetic-svg",
+      "generated": true,
+      "merchantEvidence": false,
+      "labelStatus": "synthetic-construction-truth-not-human-gold",
+      "labelsDerivedFrom": "fixture-construction-spec",
+      "constructionTruth": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [],
+        "visualFacts": [
+          {
+            "kind": "multiple_products",
+            "textOrigin": "not_applicable",
+            "regionId": null
+          }
+        ]
+      }
+    }
+  ]
+}

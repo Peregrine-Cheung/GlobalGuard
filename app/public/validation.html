@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GlobalGuard 本地验证中心：三市场模型事实契约与可信边界">
+  <title>GlobalGuard · 本地验证中心</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/validation.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="返回 GlobalGuard 工作台">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>GlobalGuard</span>
+    </a>
+    <div class="topbar-meta">
+      <a class="topbar-link active" href="/validation.html">验证中心</a>
+      <a class="topbar-link" href="/">返回工作台</a>
+    </div>
+  </header>
+
+  <main class="validation-main">
+    <section class="validation-hero">
+      <div>
+        <p class="eyebrow">LOCAL TRUST CENTER</p>
+        <h1>这不是准确率看板，<br>是可复核的信任边界。</h1>
+        <p>展示模型允许返回什么、本地程序拒绝什么，以及哪些结论仍必须由规则和人工负责。</p>
+      </div>
+      <aside id="integrity-card" class="integrity-card loading" aria-live="polite">
+        <span class="integrity-mark">…</span>
+        <div><small>DETERMINISTIC REPORT</small><b id="integrity-title">正在核对本地证据</b><p id="integrity-copy">读取运行策略和确定性报告…</p></div>
+      </aside>
+    </section>
+
+    <section class="validation-shell">
+      <div class="validation-heading">
+        <div><span class="section-kicker">01 / 结构门禁</span><h2>三条市场路径，各自守住事实边界</h2></div>
+        <span id="suite-id" class="suite-id">正在载入…</span>
+      </div>
+
+      <div class="contract-metrics" aria-label="契约报告摘要">
+        <article><span>策略</span><b id="metric-policies">—</b><small>独立 schema</small></article>
+        <article><span>合成案例</span><b id="metric-cases">—</b><small>只测结构契约</small></article>
+        <article><span>符合预期</span><b id="metric-passed">—</b><small>接受 + 拒绝路径</small></article>
+        <article><span>真实模型调用</span><b id="metric-live">—</b><small>本报告生成过程</small></article>
+      </div>
+
+      <div id="policy-grid" class="policy-grid" aria-live="polite"></div>
+
+      <section class="human-review-section">
+        <div class="validation-heading">
+          <div><span class="section-kicker">02 / 单人人工复核对照</span><h2>公开差异，比隐藏满分更可信</h2></div>
+          <span id="human-run-id" class="suite-id">正在载入…</span>
+        </div>
+        <p class="section-intro">六张中性合成图片先由人工独立标注，再与既有模型运行结果比较。这里只报告一次单人人工复核一致性，不称为准确率。</p>
+        <div class="human-metrics" aria-label="单人人工复核对照摘要">
+          <article><span>人工案例</span><b id="human-cases">—</b><small>一次单人复核</small></article>
+          <article><span>模型请求</span><b id="human-requests">—</b><small>成功返回</small></article>
+          <article><span>结构契约</span><b id="human-contracts">—</b><small>通过本地 schema</small></article>
+          <article class="agreement"><span>严格一致</span><b id="human-agreement">—</b><small>不是模型准确率</small></article>
+        </div>
+        <div id="human-case-grid" class="human-case-grid" aria-live="polite"></div>
+        <article id="known-mismatch" class="known-mismatch">
+          <span>KNOWN MISMATCH</span>
+          <h3 id="mismatch-title">正在载入差异…</h3>
+          <p id="mismatch-copy">—</p>
+        </article>
+      </section>
+
+      <section class="human-review-section">
+        <div class="validation-heading">
+          <div><span class="section-kicker">03 / 鲁棒性十图首轮</span><h2>真实调用结果与错误模式公开保留</h2></div>
+          <span id="robustness-run-id" class="suite-id">正在载入…</span>
+        </div>
+        <p class="section-intro">十张确定性合成挑战图经过一次单人人工复核和10次受控模型调用。这里展示的是首轮v5结果；v6仅完成离线优化，尚未复测。</p>
+        <div class="human-metrics" aria-label="鲁棒性十图首轮摘要">
+          <article><span>挑战案例</span><b id="robustness-cases">—</b><small>一次单人复核</small></article>
+          <article><span>供应商响应</span><b id="robustness-requests">—</b><small>禁用重试与回退</small></article>
+          <article><span>结构契约</span><b id="robustness-contracts">—</b><small>矛盾响应被拒绝</small></article>
+          <article class="agreement"><span>严格一致</span><b id="robustness-agreement">—</b><small>不是模型准确率</small></article>
+          <article><span>Token</span><b id="robustness-tokens">—</b><small>10次总消耗</small></article>
+        </div>
+        <div id="robustness-case-grid" class="human-case-grid" aria-live="polite"></div>
+        <article class="known-mismatch">
+          <span>V6 TARGETED RETEST</span>
+          <h3 id="v6-run-id">正在载入…</h3>
+          <div class="human-metrics" aria-label="v6六张最小复测摘要">
+            <article><span>供应商响应</span><b id="v6-requests">—</b><small>无重试或回退</small></article>
+            <article><span>结构契约</span><b id="v6-contracts">—</b><small>六次全部通过</small></article>
+            <article><span>Token</span><b id="v6-tokens">—</b><small>六次总消耗</small></article>
+            <article class="agreement"><span>严格一致</span><b id="v6-agreement">—</b><small>不是模型准确率</small></article>
+          </div>
+          <p>最终六次模型响应和结构契约全部通过，严格单人人工一致2/6；同六张v5基线为0/6。中性展示卡片误报、间隔文字分框和无文字结构冲突已有改善，但非文字事实绑定和吊牌归属仍需优化。此前一次报告组装故障单独保留，不隐藏额外调用成本。</p>
+        </article>
+      </section>
+
+      <section class="boundary-section">
+        <div><span class="section-kicker">04 / 未测量项</span><h2>绿色门禁不等于“已经合规”</h2></div>
+        <div class="boundary-grid">
+          <article><b>模型准确率</b><span>未测量</span><p>已有一次单人人工复核一致性，但未测多人一致性，不能报告准确率。</p></article>
+          <article><b>法律结论正确率</b><span>未测量</span><p>事实结构通过不构成法律意见，高风险适用性继续交给人工复核。</p></article>
+          <article><b>平台审核结果</b><span>未声称</span><p>本地门禁不能代表 Google、平台或监管机构已经批准商品。</p></article>
+          <article><b>真实企业试用</b><span>尚未完成</span><p>当前使用合成夹具和公开许可测试素材，不伪造商家反馈。</p></article>
+        </div>
+      </section>
+
+      <section class="evidence-section">
+        <div><span class="section-kicker">05 / 可追溯证据</span><h2>报告与当前代码同步核对</h2></div>
+        <dl>
+          <div><dt>结构契约文件</dt><dd id="evidence-file">—</dd></div>
+          <div><dt>结构契约 SHA-256</dt><dd id="evidence-hash">—</dd></div>
+          <div><dt>人工对照文件</dt><dd id="human-evidence-file">—</dd></div>
+          <div><dt>人工对照 SHA-256</dt><dd id="human-evidence-hash">—</dd></div>
+          <div><dt>鲁棒性实测文件</dt><dd id="robustness-evidence-file">—</dd></div>
+          <div><dt>鲁棒性实测 SHA-256</dt><dd id="robustness-evidence-hash">—</dd></div>
+          <div><dt>v6六张最终证据</dt><dd id="v6-evidence-file">—</dd></div>
+          <div><dt>v6最终证据 SHA-256</dt><dd id="v6-evidence-hash">—</dd></div>
+          <div><dt>v6故障恢复证据</dt><dd id="v6-recovery-evidence-file">—</dd></div>
+          <div><dt>v6故障恢复 SHA-256</dt><dd id="v6-recovery-evidence-hash">—</dd></div>
+          <div><dt>规则包</dt><dd id="rulepack-id">—</dd></div>
+          <div><dt>声明</dt><dd id="evidence-notice">—</dd></div>
+        </dl>
+      </section>
+    </section>
+  </main>
+
+  <footer><span>GlobalGuard · 发布前风险辅助</span><span>事实可追溯 · 决策有出口 · 不构成法律意见</span></footer>
+  <script type="module" src="/validation.js"></script>
+</body>
+</html>

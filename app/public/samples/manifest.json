@@ -1,0 +1,223 @@
+{
+  "schemaVersion": "1.0",
+  "collectedAt": "2026-09-04T11:57:31.966Z",
+  "purpose": "家居收纳公开照片功能测试；不是商家实际SKU、效果数据或平台合规认证。",
+  "samples": [
+    {
+      "id": "basket-empty",
+      "title": "蓝色镂空洗衣篮",
+      "filename": "Plastic laundry basket.jpg",
+      "path": "/samples/basket-empty.jpg",
+      "sourceKind": "open-license-photograph",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Plastic_laundry_basket.jpg",
+      "commonsPageId": 26197520,
+      "author": "Dodger67",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attributionRequired": false,
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Plastic_laundry_basket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloadedUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Plastic_laundry_basket.jpg/1280px-Plastic_laundry_basket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "acquiredAt": "2026-09-04T11:57:23.909Z",
+      "originalDimensions": {
+        "width": 2346,
+        "height": 1500
+      },
+      "dimensions": {
+        "width": 1280,
+        "height": 818
+      },
+      "bytes": 226572,
+      "sha256": "4626f0cb52f32454915365f685939aa5cd74cc7e81ee2c098c91c421c888fdb9",
+      "changes": "下载 Wikimedia 提供的等比例缩略图；本地未裁剪、修补、去水印或生成。",
+      "licenseEvidence": {
+        "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Dodger67\" title=\"User:Dodger67\">Dodger67</a>",
+        "licenseName": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "credit": "Own work"
+      },
+      "labelStatus": "assistant-reviewed-provisional-not-human-gold",
+      "merchantEvidence": false,
+      "generated": false
+    },
+    {
+      "id": "tray-deep",
+      "title": "深型开口收纳盒",
+      "filename": "Gratnells Extra Deep Storage Tray.jpg",
+      "path": "/samples/tray-deep.jpg",
+      "sourceKind": "open-license-photograph",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gratnells_Extra_Deep_Storage_Tray.jpg",
+      "commonsPageId": 76208438,
+      "author": "Gratnells",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true,
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Gratnells_Extra_Deep_Storage_Tray.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloadedUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Gratnells_Extra_Deep_Storage_Tray.jpg/1280px-Gratnells_Extra_Deep_Storage_Tray.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "acquiredAt": "2026-09-04T11:57:24.857Z",
+      "originalDimensions": {
+        "width": 5616,
+        "height": 3744
+      },
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "bytes": 44996,
+      "sha256": "a4ca61a57819fe981d374079ab02b2f771161bd325ca6066f635413ebf0e8643",
+      "changes": "下载 Wikimedia 提供的等比例缩略图；本地未裁剪、修补、去水印或生成。",
+      "licenseEvidence": {
+        "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Gratnells\" title=\"User:Gratnells\">Gratnells</a>",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "credit": "Own work"
+      },
+      "labelStatus": "assistant-reviewed-provisional-not-human-gold",
+      "merchantEvidence": false,
+      "generated": false
+    },
+    {
+      "id": "tray-purple",
+      "title": "紫色开口收纳盒",
+      "filename": "Gratnells School Storage Jumbo Tray in Purple.jpg",
+      "path": "/samples/tray-purple.jpg",
+      "sourceKind": "open-license-photograph",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gratnells_School_Storage_Jumbo_Tray_in_Purple.jpg",
+      "commonsPageId": 76208437,
+      "author": "Gratnells",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true,
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Gratnells_School_Storage_Jumbo_Tray_in_Purple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloadedUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Gratnells_School_Storage_Jumbo_Tray_in_Purple.jpg/1280px-Gratnells_School_Storage_Jumbo_Tray_in_Purple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "acquiredAt": "2026-09-04T11:57:26.132Z",
+      "originalDimensions": {
+        "width": 5616,
+        "height": 3744
+      },
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "bytes": 49034,
+      "sha256": "68238e86a56e660fe4e8a36414d6adaae08bc4d2c02bcf2622c275a1fe2efc24",
+      "changes": "下载 Wikimedia 提供的等比例缩略图；本地未裁剪、修补、去水印或生成。",
+      "licenseEvidence": {
+        "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Gratnells\" title=\"User:Gratnells\">Gratnells</a>",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "credit": "Own work"
+      },
+      "labelStatus": "assistant-reviewed-provisional-not-human-gold",
+      "merchantEvidence": false,
+      "generated": false
+    },
+    {
+      "id": "basket-clothes",
+      "title": "装有衣物的洗衣篮",
+      "filename": "Clothes in laundry basket.jpg",
+      "path": "/samples/basket-clothes.jpg",
+      "sourceKind": "open-license-photograph",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Clothes_in_laundry_basket.jpg",
+      "commonsPageId": 50300225,
+      "author": "Santeri Viinamäki",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true,
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Clothes_in_laundry_basket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloadedUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Clothes_in_laundry_basket.jpg/1280px-Clothes_in_laundry_basket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "acquiredAt": "2026-09-04T11:57:27.614Z",
+      "originalDimensions": {
+        "width": 3632,
+        "height": 2700
+      },
+      "dimensions": {
+        "width": 1280,
+        "height": 952
+      },
+      "bytes": 236182,
+      "sha256": "ec93f598773e4e3eebc8b0687c3b4bda22d779b1032b2dc72f2d7748fa560840",
+      "changes": "下载 Wikimedia 提供的等比例缩略图；本地未裁剪、修补、去水印或生成。",
+      "licenseEvidence": {
+        "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Zunter\" title=\"User:Zunter\">Santeri Viinamäki</a>",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "credit": "Own work"
+      },
+      "labelStatus": "assistant-reviewed-provisional-not-human-gold",
+      "merchantEvidence": false,
+      "generated": false
+    },
+    {
+      "id": "drawers-store",
+      "title": "货架上的抽屉式收纳柜",
+      "filename": "Plastic multi-drawer storage cabinets 1 2018-01-30.jpg",
+      "path": "/samples/drawers-store.jpg",
+      "sourceKind": "open-license-photograph",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Plastic_multi-drawer_storage_cabinets_1_2018-01-30.jpg",
+      "commonsPageId": 65970965,
+      "author": "FASTILY",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true,
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Plastic_multi-drawer_storage_cabinets_1_2018-01-30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloadedUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Plastic_multi-drawer_storage_cabinets_1_2018-01-30.jpg/960px-Plastic_multi-drawer_storage_cabinets_1_2018-01-30.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "acquiredAt": "2026-09-04T11:57:28.924Z",
+      "originalDimensions": {
+        "width": 3024,
+        "height": 4032
+      },
+      "dimensions": {
+        "width": 960,
+        "height": 1280
+      },
+      "bytes": 214573,
+      "sha256": "0024797c46a6500b5bbf5993bb8acb9b8c5dbb954de7cc3824fff90f0823da5d",
+      "changes": "下载 Wikimedia 提供的等比例缩略图；本地未裁剪、修补、去水印或生成。",
+      "licenseEvidence": {
+        "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User_talk:Fastily\" title=\"User talk:Fastily\"><span style=\"font-family:'Trebuchet MS';color:Indigo;font-weight:bold;\"><span style=\"font-size:120%;\">F</span><span style=\"font-size:90%;\">ASTILY</span></span></a>",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "credit": "Own work"
+      },
+      "labelStatus": "assistant-reviewed-provisional-not-human-gold",
+      "merchantEvidence": false,
+      "generated": false
+    },
+    {
+      "id": "basket-woven",
+      "title": "编织提篮",
+      "filename": "Wicker basket - Slovakia (1).jpg",
+      "path": "/samples/basket-woven.jpg",
+      "sourceKind": "open-license-photograph",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wicker_basket_-_Slovakia_(1).jpg",
+      "commonsPageId": 35934880,
+      "author": "Ladislav Luppa",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true,
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Wicker_basket_-_Slovakia_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "downloadedUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Wicker_basket_-_Slovakia_%281%29.jpg/1280px-Wicker_basket_-_Slovakia_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "acquiredAt": "2026-09-04T11:57:31.966Z",
+      "originalDimensions": {
+        "width": 4435,
+        "height": 2956
+      },
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "bytes": 225159,
+      "sha256": "f182b9175d4a23ac288af93a8505bd44d47811ec220b9cf871c7b65d70397724",
+      "changes": "下载 Wikimedia 提供的等比例缩略图；本地未裁剪、修补、去水印或生成。",
+      "licenseEvidence": {
+        "artistHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Luppus\" class=\"mw-redirect\" title=\"User:Luppus\">Ladislav Luppa</a>",
+        "licenseName": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "credit": "Own work"
+      },
+      "labelStatus": "assistant-reviewed-provisional-not-human-gold",
+      "merchantEvidence": false,
+      "generated": false
+    }
+  ]
+}

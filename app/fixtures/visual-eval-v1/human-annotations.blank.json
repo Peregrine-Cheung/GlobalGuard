@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "globalguard-visual-fixtures-v1",
+  "annotationStatus": "blank-human-review-template",
+  "instructions": "标注者只查看SVG，不查看construction-truth.json或模型输出。完成后填写annotator、reviewedAt和每个humanLabel。",
+  "annotator": null,
+  "reviewedAt": null,
+  "cases": [
+    {
+      "id": "fixture-01",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-02",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-03",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-04",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-05",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-06",
+      "humanLabel": {
+        "ocrStatus": null,
+        "ocrText": null,
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    }
+  ]
+}

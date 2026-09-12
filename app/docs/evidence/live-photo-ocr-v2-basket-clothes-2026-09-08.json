@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0",
+  "startedAt": "2026-09-08T01:40:06.114Z",
+  "kind": "open-license-real-photo-development-check",
+  "modelRouterSha256": "4ed98d666d014771fab413466e656bbd1c6098e9326dab08beecf18150123439",
+  "visualPolicySha256": "1d593c3c85268b58d8d816857a8b6f6f5d65eb8f421a96d8bb9be1423abdf953",
+  "rulepackSha256": "d9752b4667fa63172f855638511e90ad9d2a43e902872bccff2dedf9eca12548",
+  "gitHead": "f62768933c28a4452709340b5b177a5e20a4a493",
+  "notice": "开发检查不是独立人工评测或准确率。每次新上下文，无预期标签。原始 JPEG 直达应用后端，与UI转PNG不是同一次请求。",
+  "plannedCases": [
+    "basket-clothes"
+  ],
+  "cases": [
+    {
+      "id": "basket-clothes",
+      "sourceSha256": "ec93f598773e4e3eebc8b0687c3b4bda22d779b1032b2dc72f2d7748fa560840",
+      "inputSnapshot": {
+        "mode": "live",
+        "route": "US_GOOGLE",
+        "category": "home-storage",
+        "productTitle": "装有衣物的洗衣篮",
+        "productCopy": "公开许可照片的家居收纳测试，不提供隐藏卖家档案或检测结论。",
+        "image": {
+          "name": "basket-clothes.jpg",
+          "width": 1280,
+          "height": 952,
+          "mimeType": "image/jpeg"
+        },
+        "visualSignals": {}
+      },
+      "httpStatus": 200,
+      "result": {
+        "analysisId": "ad538b25-0dfa-4e50-b9cf-856f676dda26",
+        "analyzedAt": "2026-09-08T01:40:10.772Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 90,
+          "status": "review",
+          "totalRisks": 2,
+          "blockerCount": 0,
+          "reviewCount": 2,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "fd14323fa5e4",
+            "ruleId": "GG-US-VISUAL-MULTIPLE-PRODUCTS",
+            "route": "US_GOOGLE",
+            "severity": "medium",
+            "category": "可见事实待复核",
+            "title": "出现多件物品，需确认售卖范围",
+            "finding": "模型观察（非文字）：蓝色洗衣篮内装有多种颜色和款式的衣物（白布、黑袜、灰袜等），若商品仅为洗衣篮，需确认是否包含内部衣物。",
+            "whyItMatters": "最佳实践核查，不是自动违规裁定：主图最佳实践关注实际售卖的商品及随附物；不能仅凭多件陈列断言违规或认定为套装。",
+            "action": "请卖家确认单件、套装或配件范围，必要时重新选择主图。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "装有衣物的洗衣篮",
+          "category": "home-storage",
+          "image": {
+            "name": "basket-clothes.jpg",
+            "width": 1280,
+            "height": 952,
+            "mimeType": "image/jpeg"
+          },
+          "mode": "live",
+          "fingerprintVersion": 4,
+          "observationPolicy": "us-visual-facts-v2",
+          "ocrStatus": "unreadable_text_seen",
+          "imageInputSha256": "4250f8292c1362f6187bcd0e50ab875bac586fcd4e1a0d381452fb162d58333f",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "b7f910120be0f088"
+        },
+        "ai": {
+          "status": "live",
+          "observationPolicy": "us-visual-facts-v2",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-67bd1c46-2573-4cf1-974a-8d0a0d823f21",
+          "usage": {
+            "promptTokens": 1832,
+            "completionTokens": 173,
+            "totalTokens": 2005
+          },
+          "latencyMs": 4480,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 4479,
+              "fallback": false,
+              "requestId": "chatcmpl-67bd1c46-2573-4cf1-974a-8d0a0d823f21",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrStatus": "unreadable_text_seen",
+            "ocrText": "NONE",
+            "visualObservation": "画面显示一个蓝色镂空塑料洗衣篮放置在墙角，背景为黄色方形瓷砖墙面和绿色方形地砖。篮内装有杂乱衣物，包括白色织物、黑色袜子及红黑配色袜子。其中一只灰色袜子上可见反向印刷的黑色字符痕迹，但因角度和清晰度原因无法可靠转写。"
+          }
+        }
+      }
+    }
+  ],
+  "overall": "selected_backend_responses_received_not_quality_pass",
+  "finishedAt": "2026-09-08T01:40:10.780Z"
+}

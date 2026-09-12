@@ -1,0 +1,144 @@
+{
+  "startedAt": "2026-09-04T11:07:04.568Z",
+  "fixtureType": "synthetic",
+  "applicationBackend": true,
+  "cases": [
+    {
+      "id": "draft",
+      "result": {
+        "analysisId": "94ae8b75-44be-4369-b935-35e028edd5c0",
+        "analyzedAt": "2026-09-04T11:07:12.248Z",
+        "route": "US_GOOGLE",
+        "routeLabel": "美国 · Google Merchant",
+        "rulepack": {
+          "id": "globalguard-core-2026-09",
+          "version": "1.0.0",
+          "effectiveDate": "2026-09-02",
+          "disclaimer": "本工具提供发布前风险辅助，不构成法律意见；高风险结论保留人工复核出口。"
+        },
+        "summary": {
+          "score": 72,
+          "status": "review",
+          "totalRisks": 3,
+          "blockerCount": 0,
+          "reviewCount": 3,
+          "evidenceCount": 1
+        },
+        "risks": [
+          {
+            "id": "32716615b1f1",
+            "ruleId": "google_image_link",
+            "route": "US_GOOGLE",
+            "severity": "high",
+            "category": "Image Quality",
+            "title": "非真实商品图片（插图/渲染图）",
+            "finding": "该素材为计算机生成的矢量插画或3D渲染图，并非真实拍摄的商品照片。",
+            "whyItMatters": "Google Merchant Center 政策要求主图必须展示真实商品，禁止使用插图、卡通或纯渲染图像，以免误导用户关于商品实际外观和材质的预期。",
+            "action": "替换为展示真实商品实物的高清摄影图片。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "1994cf326ac8",
+            "ruleId": "google_image_link",
+            "route": "US_GOOGLE",
+            "severity": "medium",
+            "category": "Promotional Overlays",
+            "title": "图片包含装饰性图标与文本叠加",
+            "finding": "图片右上角包含“FOLDABLE STORAGE”文字及勾选标记图标，属于非商品本身的装饰性叠加元素。",
+            "whyItMatters": "商品图片应保持整洁，避免添加促销徽章、功能标签或装饰性图形，这些元素会干扰用户对商品主体的视觉识别。",
+            "action": "移除图片上的所有文字、图标及装饰性边框，仅保留商品主体。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [
+              {
+                "id": "google_image_link",
+                "title": "Google Merchant Center：图片链接要求",
+                "publisher": "Google",
+                "url": "https://support.google.com/merchants/answer/6324350?hl=en",
+                "retrievedAt": "2026-09-02",
+                "appliesTo": "US_GOOGLE"
+              }
+            ],
+            "origin": "model-router"
+          },
+          {
+            "id": "60ca6fc605e1",
+            "ruleId": "GG-VERIFY-IMAGE-001",
+            "route": "US_GOOGLE",
+            "severity": "info",
+            "category": "检测覆盖范围",
+            "title": "图片语义与修复质量尚需复核",
+            "finding": "尺寸和边缘检查不能确认残留叠字、徽章、水印或商品主体是否受损；旧标记清空不代表图片已无风险。",
+            "whyItMatters": "这是系统验证能力的边界，不是新增平台规则，也不是已判定的违规。",
+            "action": "检查实际输出图中的文字、装饰和商品完整性；有模型辅助观察时也保留人工确认。",
+            "applicability": "当前所选发布环境",
+            "requiresHumanReview": true,
+            "location": null,
+            "evidence": [],
+            "origin": "verification-gate"
+          }
+        ],
+        "fixes": [],
+        "audit": {
+          "productTitle": "可折叠家居收纳箱",
+          "category": "home-storage",
+          "image": {
+            "width": 720,
+            "height": 720,
+            "name": "draft.png",
+            "mimeType": "image/png"
+          },
+          "mode": "live",
+          "fingerprintVersion": 2,
+          "imageInputSha256": "f1eaf49142306889396c494e46b7601d9e906274dfd763cf45e40a2461b0a9e0",
+          "imageHashEncoding": "SHA-256 of the submitted image data URL (UTF-8)",
+          "declaredParentAnalysisId": null,
+          "visualVerification": "human-review-pending",
+          "inputFingerprint": "bde8851613bddf76"
+        },
+        "ai": {
+          "status": "live",
+          "provider": "aliyun-token-plan",
+          "selectedModel": "qwen3.7-plus",
+          "requestId": "chatcmpl-3d2d6ba2-b9f7-4a7b-95b0-da7824c9fb38",
+          "usage": {
+            "promptTokens": 942,
+            "completionTokens": 401,
+            "totalTokens": 1343
+          },
+          "latencyMs": 7567,
+          "stages": [
+            {
+              "model": "qwen3.7-plus",
+              "purpose": "OCR + 视觉事实 + 结构化辅助裁决",
+              "latencyMs": 7567,
+              "fallback": false,
+              "requestId": "chatcmpl-3d2d6ba2-b9f7-4a7b-95b0-da7824c9fb38",
+              "ok": true
+            }
+          ],
+          "observations": {
+            "ocrText": "FOLDABLE STORAGE",
+            "visualObservation": "图片为扁平化风格的矢量插画，展示一个米色立方体收纳箱。右上角叠加深绿色圆形图标及绿色对勾符号，旁边配有英文说明文字。背景为纯浅灰白色，无真实摄影光影或纹理细节。"
+          }
+        }
+      }
+    }
+  ],
+  "overall": "all_selected_real_backend_responses_received",
+  "finishedAt": "2026-09-04T11:07:12.257Z"
+}

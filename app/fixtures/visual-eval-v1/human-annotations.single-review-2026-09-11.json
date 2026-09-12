@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "globalguard-visual-fixtures-v1",
+  "annotationStatus": "completed-single-human-review",
+  "annotator": "单人复核-01",
+  "reviewedAt": "2026-09-11T02:37:07.916Z",
+  "cases": [
+    {
+      "id": "fixture-01",
+      "humanLabel": {
+        "ocrStatus": "no_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-02",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SKU BX-204",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SKU BX-204",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [0.4237, 0.5888, 0.1528, 0.028]
+          }
+        ],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-03",
+      "humanLabel": {
+        "ocrStatus": "unreadable_text_seen",
+        "ocrText": "NONE",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": null,
+            "origin": "product",
+            "readability": "unreadable",
+            "bbox": [0.4109, 0.5856, 0.178, 0.0294]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "low_clarity",
+            "textOrigin": "not_applicable",
+            "regionId": null
+          }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-04",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "FLEXIBOX",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "FLEXIBOX",
+            "origin": "product",
+            "readability": "readable",
+            "bbox": [0.3809, 0.493, 0.2426, 0.0438]
+          }
+        ],
+        "visualFacts": [],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-05",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "$19.99\nSTORE TAG",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "$19.99",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [0.768, 0.6879, 0.1414, 0.0544]
+          },
+          {
+            "id": "text-2",
+            "text": "STORE TAG",
+            "origin": "scene",
+            "readability": "readable",
+            "bbox": [0.7901, 0.7393, 0.1026, 0.0288]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "price_text",
+            "textOrigin": "scene",
+            "regionId": "text-1"
+          }
+        ],
+        "notes": ""
+      }
+    },
+    {
+      "id": "fixture-06",
+      "humanLabel": {
+        "ocrStatus": "readable_text",
+        "ocrText": "SALE 50% OFF",
+        "textRegions": [
+          {
+            "id": "text-1",
+            "text": "SALE 50% OFF",
+            "origin": "overlay",
+            "readability": "readable",
+            "bbox": [0.2404, 0.0987, 0.5185, 0.0598]
+          }
+        ],
+        "visualFacts": [
+          {
+            "kind": "promotional_overlay",
+            "textOrigin": "overlay",
+            "regionId": "text-1"
+          }
+        ],
+        "notes": ""
+      }
+    }
+  ],
+  "limitations": {
+    "singleAnnotator": true,
+    "interAnnotatorAgreementMeasured": false,
+    "modelAccuracyEstablished": false,
+    "legalCorrectnessEstablished": false
+  }
+}
