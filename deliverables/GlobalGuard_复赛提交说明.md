@@ -78,8 +78,8 @@ npm start
 
 ## 六、提交材料
 
-- `GlobalGuard_复赛路演稿_v7验收版.pptx`
-- `GlobalGuard_复赛路演稿_v7验收版.pdf`
+- `还差two dollars的Token_GlobalGuard跨境图文合规智能体_复赛路演材料.pptx`
+- `还差two dollars的Token_GlobalGuard跨境图文合规智能体_复赛路演材料.pdf`
 - `GlobalGuard_复赛产品演示_v7无配音版.webm`
 - `GlobalGuard_复赛提交说明.md`
 - `GlobalGuard_3分钟演示讲稿.md`
@@ -88,4 +88,4 @@ npm start
 
 公开代码仓库：`https://github.com/Peregrine-Cheung/GlobalGuard`
 
-该仓库仅发布经过秘密与个人信息排查的应用源码、运行说明和公开提交文档；2026-09-12 已由 GitHub API 确认仓库可见性为 `public`。正式提交前仍应在无痕窗口打开一次，确认赛事现场网络可读取。本地体验地址不能从公网直接打开。
+该仓库仅发布经过秘密与个人信息排查的应用源码、运行说明和公开提交文档；2026-09-12 已由 GitHub API 确认仓库可见性为 `public`，并由参赛者在未登录的 InPrivate 窗口验证 README 与 `app/` 可读取。本地体验地址不能从公网直接打开。
